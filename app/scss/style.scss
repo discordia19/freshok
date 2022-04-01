@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  &__list {
+    padding-left: 10px;
+    display: grid;
+  }
+}
+
+.header {
+  padding: 15px;
+}
