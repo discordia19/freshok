@@ -1,0 +1,221 @@
+.header {
+  color: $white;
+
+  &__top {
+    padding: 15px 0;
+    color: $white;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.8;
+    text-transform: uppercase;
+    background-color: $dark-800;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__support {
+    display: flex;
+  }
+
+  &__contact:not(:last-child) {
+    padding-right: 50px;
+  }
+
+  &__link {
+    outline: transparent;
+    border-radius: 3px;
+    transition: opacity 0.3s ease, outline-color 0.3s ease;
+  }
+
+  &__link:hover {
+    opacity: 0.7;
+  }
+
+  &__link:focus {
+    outline: 3px solid $white;
+  }
+
+  &__link:active {
+    color: $green-200;
+    outline: transparent;
+  }
+
+  &__link--image {
+    padding: 5px 45px;
+    padding-right: 0;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+  }
+  
+  &__link--truck {
+    background-image: url('../images/header/favicons/truck-fav.svg');
+  }
+  
+  &__link--phone {
+    background-image: url('../images/header/favicons/tel-fav.svg');
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item:not(:first-child) {
+    padding-left: 25px;
+  }
+
+
+  &__bottom {
+    padding: 30px 0;
+    background-color: $green-900;
+  }
+
+  &__searchform {
+    max-width: 580px;
+    flex-grow: 1;
+  }
+}
+
+.catalog {
+  position: relative;
+
+  &__button {
+    position: relative;
+    padding: 15px 40px 15px 60px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: $green-900;
+    background-color: $white;
+    background-image: url(../images/header/favicons/catalog-button-lines.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+
+  &__button--active {
+    background-color: $green-200;
+    border-radius: 6px 6px 0 0;
+  }
+
+  &__button::after {
+    @include pseudo(absolute, inherit, '');
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px; 
+    width: 10px;
+    height: 20px;
+    background-image: url('../images/header/favicons/catalog-button-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: rotate 0.3s ease;
+  }
+
+  &__button--active::after {
+    transform: translateY(-50%) rotate(180deg);
+    background-color: $green-200;
+  }
+
+  &__button:active, &__button:hover  {
+    background-color: $green-200;
+  }
+
+  &__menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid $silver-300;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $black;
+    background-color: $white;
+  }
+
+  &__item {
+    border-bottom: 1px solid $silver-300;
+  }
+
+  &__item:last-child {
+    border-bottom: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 20px;
+    
+    outline-color: transparent;
+    transition: outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &__link:hover {
+    color: $green-900;
+    box-shadow: inset 2px 0 0 0px $green-900;
+    // border-left: 3px solid $green-900;
+  }
+
+  &__link:focus {
+    // outline: 3px solid $green-200; 
+    box-shadow: inset 0 0 0 2px $green-200;
+  }
+
+  &__link:active {
+    color: $silver-600;
+    box-shadow: none;
+    outline: transparent;
+  }
+
+  &__menu--disable {
+    display: none;
+  }
+}
+
+.searchform {
+  display: flex;
+
+  &__input {
+    position: relative;
+    padding: 15px 0 15px 50px;
+    flex-basis: 420px;
+    background-image: url('../images/header/favicons/search-fav.svg')
+    ;
+    background-position: 20px 50%;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+  }
+
+  &__button {
+    padding: 20px 50px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $dark-800;
+    outline: transparent;
+    transition: background-color 0.3s ease, outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &__button:hover {
+    background-color: $dark-800-85;
+  }
+
+  &__button:focus {
+    outline: 3px solid $green-200;
+  }
+
+  &__button:active {
+    color: $white-50;
+    outline: transparent;
+    box-shadow: inset 0px 4px 4px $black-25;
+  }
+}

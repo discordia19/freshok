@@ -1,11 +1,7 @@
-.menu {
-  display: flex;
-  &__list {
-    padding-left: 10px;
-    display: grid;
-  }
-}
+@import '_vars.scss';
+@import '_fonts.scss';
+@import 'reset.scss';
+@import 'global.scss';
 
-.header {
-  padding: 15px;
-}
+@import 'header.scss';
+@import 'footer';

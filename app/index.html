@@ -1,13 +1,169 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ФреШок | Главная страница</title>
+  <link href="css/style.min.css" rel="stylesheet">
 </head>
-<body>
 
+<body>
+  <header class="header">
+    <div class="header__top">
+      <div class="container">
+        <div class="header__inner">
+
+          <ul class="header__support">
+            <li class="header__contact">
+              <a class="header__link header__link--image header__link--truck" href="#">
+                АДРЕС И ВРЕМЯ ДОСТАВКИ
+              </a>
+            </li>
+
+            <li class="header__contact">
+              <a class="header__link header__link--image header__link--phone" href="">
+                ГОРЯЧАЯ ЛИНИЯ 24/7
+              </a>
+            </li>
+          </ul>
+
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a class="header__link" href="#">
+                  ДОСТАВКА
+                </a>
+              </li>
+
+              <li class="header__nav-item">
+                <a class="header__link" href="#">
+                  О НАС
+                </a>
+              </li>
+
+              <li class="header__nav-item">
+                <a class="header__link" href="#">
+                  НОВОСТИ
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo header__logo" href="#">
+            <img class="header__img" src="images/logo.svg" alt="Логотип сайта" width="190px" height="60px">
+          </a>
+
+          <div class="catalog">
+            <button class="catalog__button catalog__button--active" type="button">Каталог продуктов</button>
+            <ul class="catalog__menu">
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Овощи и фрукты
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Молочные продукты
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Хлеб
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Мясо
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Колбаса
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Рыба
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Алкоголь
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Напитки
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Торты
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Мясо
+                </a>
+              </li>
+
+              <li class="catalog__item">
+                <a class="catalog__link" href="#">
+                  Чай, кофе
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          <form class="searchform header__searchform" action="post">
+            <input class="searchform__input" type="text" name="search" placeholder="Найти в магазине ...">
+            <button class="searchform__button" type="submit">Поиск</button>
+          </form>
+
+          <ul class="header__user-nav">
+            <li class="header__user-item">
+              <a class="header__user-link" href="#">
+                Личный кабинет
+              </a>
+            </li>
+
+            <li class="header__user-item">
+              <a class="header__user-link" href="#">
+                Избранное
+              </a>
+            </li>
+
+            <li class="header__user-item">
+              <a class="header__user-link" href="#">
+                Корзина
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
   <script src="js/main.min.js"></script>
 </body>
+
 </html>

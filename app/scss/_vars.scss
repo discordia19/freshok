@@ -1,0 +1,23 @@
+$white: #FFFFFF; 
+$white-50: rgba(255, 255, 255, 0.5); 
+$silver-100: #F6F6F6;
+$silver-300: #EBEBEB;
+$silver-600: #C1C1C1;
+$yellow-900: #FFB800;
+$orange-900: #FF7A00;
+$red-900: #CF3E3B;
+$green-100: #EFF6E7;
+$green-200: #E0EDCF;
+$green-900: #63A60F;
+$dark-500: #505050;
+$dark-800: #31352B;
+$dark-800-85: rgba(49, 53, 43, 0.85);
+$dark-900: #121212;
+$black: #000000;
+$black-25: rgba(0, 0, 0, 0.25);
+
+@mixin pseudo($position: absolut, $display: block, $content: '') {
+	position: $position;
+	display: $display;
+	content: $content;
+}
