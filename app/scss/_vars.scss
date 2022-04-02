@@ -8,6 +8,7 @@ $orange-900: #FF7A00;
 $red-900: #CF3E3B;
 $green-100: #EFF6E7;
 $green-200: #E0EDCF;
+$green-400: #4D800C;
 $green-900: #63A60F;
 $dark-500: #505050;
 $dark-800: #31352B;
@@ -20,4 +21,17 @@ $black-25: rgba(0, 0, 0, 0.25);
 	position: $position;
 	display: $display;
 	content: $content;
+}
+
+@mixin buttonreset() {
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: 0;
+}
+
+@mixin backgroundimage($url) {
+	background-image: url($url);
+	background-position: center;
+	background-repeat: no-repeat;
 }

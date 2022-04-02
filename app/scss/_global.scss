@@ -17,7 +17,14 @@ body {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.6;
+	letter-spacing: 0.03em;
 	background-color: $white;
+	// box-shadow: 1000px 0 0 0 $black;
+	// overflow: hidden;
+}
+
+.scroll-off {
+	overflow: hidden;
 }
 
 .container {
