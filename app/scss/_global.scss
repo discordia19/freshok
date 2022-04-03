@@ -45,3 +45,105 @@ body {
 .logo:active {
 	opacity: 0.5;
 }
+
+.form {
+  display: flex;
+
+  &__input {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+  }
+
+	&__input--search {
+    position: relative;
+    padding: 15px 0 15px 50px;
+    background-image: url('../images/header/favicons/search-fav.svg')
+    ;
+    background-position: 20px 50%;
+    background-repeat: no-repeat;
+  }
+
+	&__input::placeholder {
+		color: $dark-800;
+		opacity: 0.15;
+		transition: opacity 0.3s ease;
+	}
+	
+	&__input:hover::placeholder, &__input:focus, &__input:focus::placeholder {
+		opacity: 1;
+	}
+	
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $dark-800;
+    outline: transparent;
+    transition: background-color 0.3s ease, outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+	&__button--subscription {
+		padding: 12px 16px;
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 1.3;
+		background-color: $green-900;
+	}
+
+	&__button:hover {
+    background-color: rgba($dark-800-85, 0.85);
+  }
+
+	&__button--subscription:hover {
+    background-color: rgba($green-900, 0.85);
+  }
+
+  &__button:focus {
+    outline: 3px solid $green-200;
+  }
+
+  &__button:active {
+    color: $white-50;
+    outline: transparent;
+    box-shadow: inset 0px 4px 4px rgba($black, 0.25);
+  }
+}
+
+// Standart links transitions
+
+.link--state {
+	border-radius: 3px;
+	outline: transparent;
+	@include link-transition();
+}
+
+.link--state svg {
+	@include link-transition-fill();
+}
+
+.link--state:focus {
+	@include link-focus($green-200);
+}
+
+.link--state:hover {
+	@include link-hover();
+}
+
+.link--state:active svg {
+	fill: $green-200;
+}

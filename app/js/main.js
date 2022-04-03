@@ -15,7 +15,7 @@
 
 	// Search
 
-	const searchformBtn = document.querySelector('.searchform__button');
+	const searchformBtn = document.querySelector('.form__button');
 
 	searchformBtn.addEventListener('click', (event) => (event.preventDefault()));
 
