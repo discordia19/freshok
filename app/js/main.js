@@ -1,7 +1,31 @@
 'use strict';
-'use strict';
 
 (() => {
+	// Promo slider
+	
+	// import Swiper styles
+	
+	const swiper = new Swiper('.promo', {
+		loop: false,
+		slideClass: 'promo__slide',
+		wrapperClass: 'promo__wrapper',
+	
+		navigation: {
+			nextEl: '.promo__pagination--next',
+			prevEl: '.promo__pagination--prev',
+			disabledClass: 'promo__pagination--disable'
+		},
+
+		a11y: {
+			firstSlideMessage: 'Первая акция',
+			prevSlideMessage: 'Предыдущая акция',
+			nextSlideMessage: 'Следующая акция',
+			lastSlideMessage: 'Последняя акция'
+		}
+	});
+
+	// 
+
 	const BODY_SELECTOR = '.body';
 	const SCROLL_OFF_CLASS = 'scroll-off'; 
 

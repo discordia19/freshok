@@ -33,7 +33,7 @@ export const clearDist = () => {
 }
 
 // Styles 
-
+// css/swiper-bundle.min.css
 export const styles = () => {
   return gulp.src('app/scss/style.scss')
     .pipe(scss({ outputStyle: 'compressed' }))
@@ -49,7 +49,10 @@ export const styles = () => {
 // Scripts
 
 export const scripts = () => {
-  return gulp.src('app/js/main.js')
+  return gulp.src([
+	  'node_modules/swiper/swiper-bundle.min.js',
+	  'app/js/main.js'
+	])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'))

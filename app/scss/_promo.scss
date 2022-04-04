@@ -1,0 +1,90 @@
+.promo {
+	position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    padding: 140px 0;
+    background-image: url('../images/images/promo/carrot.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+  }
+
+  &__inner {
+    padding: 25px;
+    background-color: rgba($white, 0.8);
+    border-radius: 4px;
+  }
+
+  &__title {
+		display: block;
+		max-width: 780px;
+    font-family: 'Ruda';
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $dark-500;
+  }
+
+  &__subtitle {
+    color: $red-900;
+  }
+
+  &__terms {
+    padding-bottom: 45px;
+    line-height: 1.4;
+  }
+
+	&__pagination {
+		position: absolute;
+		top: 50%;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		border-radius: 6px;
+		background-color: rgba($white, 0.8);
+		outline: transparent;
+		transition: background-color 0.3s ease, outline-color 0.3s ease;
+	}
+
+	&__pagination svg {
+		transition: fill 0.3s ease;
+	}
+
+	&__pagination--prev {
+		left: 3%;
+	}
+
+	&__pagination--next {
+		right: 3%;
+	}
+
+	&__pagination--disable svg {
+		fill: $silver-600;
+	}
+
+	&__pagination:focus {
+		outline: 3px solid rgba($green-900, 0.8);
+	}
+
+	&__pagination:hover {
+		background-color: $green-200;
+	}
+
+	&__pagination:hover, &__pagination:active svg {
+		fill: $green-900;
+	}
+}

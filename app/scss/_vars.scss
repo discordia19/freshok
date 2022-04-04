@@ -1,5 +1,4 @@
 $white: #FFFFFF; 
-$white-50: rgba(255, 255, 255, 0.5); 
 $silver-100: #F6F6F6;
 $silver-300: #EBEBEB;
 $silver-600: #C1C1C1;
@@ -12,10 +11,8 @@ $green-400: #4D800C;
 $green-900: #63A60F;
 $dark-500: #505050;
 $dark-800: #31352B;
-$dark-800-85: rgba(49, 53, 43, 0.85);
 $dark-900: #121212;
 $black: #000000;
-$black-25: rgba(0, 0, 0, 0.25);
 
 @mixin pseudo($position: absolut, $display: block, $content: '') {
 	position: $position;
@@ -54,5 +51,23 @@ $black-25: rgba(0, 0, 0, 0.25);
 
 @mixin link-active($color: $green-200 ) {
 	color: $color;
+	outline: transparent;
+}
+
+@mixin button-transition() {
+	transition: opacity 0.3s ease, outline-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+@mixin button-focus($color: $white) {
+	outline: 3px solid $white;
+}
+
+@mixin button-hover($color: $green-400) {
+	background-color: $color;
+}
+
+@mixin button-active($color: $white) {
+	box-shadow: inset 0px 4px 4px rgba($white, 0.25);
+	color: rgba($color, 0.5);
 	outline: transparent;
 }

@@ -33,11 +33,11 @@
   }
   
   &__link--truck {
-    background-image: url('../images/header/favicons/truck-fav.svg');
+    background-image: url('../images/favicons/header/truck-fav.svg');
   }
   
   &__link--phone {
-    background-image: url('../images/header/favicons/tel-fav.svg');
+    background-image: url('../images/favicons/header/tel-fav.svg');
   }
 
   &__nav-list {
@@ -104,11 +104,11 @@
   }
 
   &__user-link:active {
-    color: $white-50;
+    color: rgba($white, 0.5);
     outline: transparent;
-    box-shadow: inset 0px 4px 4px $black-25;
+    box-shadow: inset 0px 4px 4px rgba($black, 0.25);
     svg {
-      fill: $white-50;
+      fill: rgba($white, 0.5);
     }
   }
 
@@ -146,7 +146,7 @@
     letter-spacing: 0.03em;
     color: $green-900;
     background-color: $white;
-    background-image: url(../images/header/favicons/catalog-button-lines.svg);
+    background-image: url(../images/favicons/header/catalog-button-lines.svg);
     background-repeat: no-repeat;
     background-position: 15px center;
     transition: background-color 0.3s ease, border-radius 0.3s ease;
@@ -164,7 +164,7 @@
     right: 20px; 
     width: 10px;
     height: 20px;
-    background-image: url('../images/header/favicons/catalog-button-arrow.svg');
+    background-image: url('../images/favicons/header/catalog-button-arrow.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -190,6 +190,7 @@
     letter-spacing: 0.03em;
     color: $black;
     background-color: $white;
+		z-index: 1;
   }
 
   &__item {
@@ -346,7 +347,7 @@
     @include buttonreset;
     width: 25px;
     height: 25px;
-    background-image: url('../images/favs/close-m.svg');
+    background-image: url('../images/favicons/cart/close-m.svg');
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -383,7 +384,7 @@
   
   &__item::after {
     @include pseudo(absolute, block, '');
-    @include backgroundimage("../images/favs/close-s.svg");
+    @include backgroundimage("../images/favicons/cart/close-s.svg");
     right: 12px;
     top: 12px;
     width: 10px;
@@ -437,11 +438,11 @@
   }
 
   &__counter-btn--subtract {
-    @include backgroundimage("../images/favs/minus.svg");
+    @include backgroundimage("../images/favicons/counter/minus.svg");
   }
   
   &__counter-btn--add {
-    @include backgroundimage("../images/favs/plus.svg");
+    @include backgroundimage("../images/favicons/counter/plus.svg");
   }
 
   &__count {
