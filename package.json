@@ -20,6 +20,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
+    "mixitup": "^3.3.1",
     "sass": "^1.49.10",
     "swiper": "^8.0.7"
   }

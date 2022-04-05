@@ -14,7 +14,7 @@ $dark-800: #31352B;
 $dark-900: #121212;
 $black: #000000;
 
-@mixin pseudo($position: absolut, $display: block, $content: '') {
+@mixin pseudo($position: absolute, $display: block, $content: '') {
 	position: $position;
 	display: $display;
 	content: $content;

@@ -4,9 +4,6 @@
   &__top {
     padding: 15px 0;
     color: $white;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.8;
     text-transform: uppercase;
     background-color: $dark-800;
   }
@@ -24,6 +21,12 @@
   &__contact:not(:last-child) {
     margin-right: 50px;
   }
+
+	&__link {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+	}
 
   &__link--image {
     padding: 5px 45px;
@@ -50,11 +53,10 @@
 
 
   &__bottom {
-    padding: 30px 0;
+    padding: 25px 0;
     background-color: $green-900;
   }
 
-  // martgin
   &__logo {
     margin-right: 25px;
   }
@@ -92,7 +94,7 @@
   }
 
   &__user-item:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 10px;
   }
 
   &__user-link:hover {
@@ -212,11 +214,9 @@
   &__link:hover {
     color: $green-900;
     box-shadow: inset 2px 0 0 0px $green-900;
-    // border-left: 3px solid $green-900;
   }
 
   &__link:focus {
-    // outline: 3px solid $green-200; 
     box-shadow: inset 0 0 0 2px $green-200;
   }
 
@@ -230,75 +230,6 @@
     display: none;
   }
 }
-
-
-
-
-
-// .searchform {
-//   display: flex;
-
-//   &__input {
-//     position: relative;
-//     flex-grow: 1;
-//     padding: 15px 0 15px 50px;
-//     border: none;
-//     border-radius: 6px 0 0 6px;
-//     font-size: 14px;
-//     font-weight: 400;
-//     line-height: 1.4;
-//     letter-spacing: 0.03em;
-//     background-image: url('../images/header/favicons/search-fav.svg')
-//     ;
-//     background-position: 20px 50%;
-//     background-repeat: no-repeat;
-//   }
-
-// 	&__input::placeholder {
-// 		color: $dark-800;
-// 		opacity: 0.15;
-// 		transition: opacity 0.3s ease;
-// 	}
-	
-// 	&__input:hover::placeholder, &__input:focus, &__input:focus::placeholder {
-// 		opacity: 1;
-// 	}
-	
-//   &__button {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 15px 50px;
-//     border: none;
-//     border-radius: 0 6px 6px 0;
-//     font-weight: 600;
-//     font-size: 14px;
-//     line-height: 1.4;
-//     letter-spacing: 0.03em;
-//     color: $white;
-//     text-transform: uppercase;
-//     background-color: $dark-800;
-//     outline: transparent;
-//     transition: background-color 0.3s ease, outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-//   }
-
-//   &__button:hover {
-//     background-color: $dark-800-85;
-//   }
-
-//   &__button:focus {
-//     outline: 3px solid $green-200;
-//   }
-
-//   &__button:active {
-//     color: $white-50;
-//     outline: transparent;
-//     box-shadow: inset 0px 4px 4px $black-25;
-//   }
-// }
-
-
-
 
 .cart {
   position: absolute;

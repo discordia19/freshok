@@ -20,6 +20,9 @@
   }
 
   &__inner {
+		display: flex;
+		flex-direction: column;
+		justify-items: flex-start;
     padding: 25px;
     background-color: rgba($white, 0.8);
     border-radius: 4px;
@@ -27,6 +30,7 @@
 
   &__title {
 		display: block;
+		margin-bottom: 10px;
 		max-width: 780px;
     font-family: 'Ruda';
     font-weight: 900;
@@ -41,13 +45,20 @@
   }
 
   &__terms {
-    padding-bottom: 45px;
+		margin-bottom: 30px;
     line-height: 1.4;
   }
+
+	&__button {
+		font-family: 'OpenSans';
+		padding: 12px 24px;
+		align-self: flex-start;
+	}
 
 	&__pagination {
 		position: absolute;
 		top: 50%;
+		transform: translateY(-50%);
 		width: 60px;
 		height: 60px;
 		display: flex;

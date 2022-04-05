@@ -51,6 +51,7 @@ export const styles = () => {
 export const scripts = () => {
   return gulp.src([
 	  'node_modules/swiper/swiper-bundle.min.js',
+	  'node_modules/mixitup/dist/mixitup.min.js',
 	  'app/js/main.js'
 	])
     .pipe(concat('main.min.js'))
