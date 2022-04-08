@@ -1,0 +1,96 @@
+.news {
+	 padding-bottom: 70px; 
+
+	 &__top {
+		 display: flex;
+		 justify-content: space-between;
+		 align-items: center;
+		 margin-bottom: 30px;
+	 }
+
+	 &__all {
+		 	text-transform: uppercase;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 1.3;
+		 	color: $green-900;
+			box-shadow: 0px 3px 0px -1px $green-900;
+			outline-color: transparent;
+			transition: outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+	 }
+
+	 &___all:hover {
+		 color: $green-400;
+		 box-shadow: 0px 3px 0px -1px $green-400;
+	 }
+
+	 &__all:focus {
+		 outline: 3px solid $green-200;
+	 }
+
+	 &__all:active {
+		 box-shadow: 0px 4px 0px -1px $green-200;
+		 outline: transparent;
+	 }
+
+	 &__list {
+		 display: grid;
+		 grid-template-columns: 1fr 1fr 1fr;
+		 gap: 30px;
+		 
+	 }
+
+	 &__item {
+		 	position: relative;
+			border-radius: 6px;
+			box-shadow: 0px 3px 3px rgba($black, 0.25);
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 1.5;
+			color: $dark-900;
+			background-color: $white;
+	 }
+
+	 &__link {
+		 display: block;
+		 width: 100%;
+		 padding: 63% 18px 18px 18px;
+		 background-position: top center;
+		 background-repeat: no-repeat;
+		 background-image:url('../images/images/news/strawberry.jpg');
+		 background-size: contain;
+		 transition: color 0.3s ease;
+	 }
+
+		&__link:hover {
+			color: $green-900;
+		}
+
+
+	 &__date {
+			position: absolute;
+			top: 0;
+			left: 5%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 10px 15px;
+			background-color: $white;
+			border-radius: 0px 0px 4px 4px;
+			font-weight: 700;
+			font-size: 10px;
+			line-height: 1.4;
+			color: $dark-900;
+			text-transform: uppercase;
+	 }
+
+	 &__day {
+		font-family: 'Ruda';
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 1;
+	 }
+
+
+
+}

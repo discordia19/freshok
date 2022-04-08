@@ -27,10 +27,10 @@ $black: #000000;
 	border: 0;
 }
 
-@mixin backgroundimage($url) {
+@mixin backgroundimage($url, $position: center, $repeat: no-repeat) {
 	background-image: url($url);
-	background-position: center;
-	background-repeat: no-repeat;
+	background-position: $position;
+	background-repeat: $repeat;
 }
 
 @mixin link-transition() {

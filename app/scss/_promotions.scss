@@ -1,0 +1,190 @@
+
+.smallcard {
+	position: relative;
+	display: flex;
+	padding: 12px 12px 12px 125px;
+	border: 1px solid $silver-600;
+	border-radius: 6px;
+	height: 125px;
+	background-color: $white;
+	transition: border-color 0.3s ease;
+	@include backgroundimage("../images/goods/s-m/pineapple.jpg", 12px, no-repeat);
+
+
+	&__image {
+		position: relative;
+		display: flex;
+		align-self: center;
+		justify-content: center;
+		width: 100%;
+		height: 225px;
+		margin-bottom: 10px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url("../images/goods/m/pineapple.jpg" );
+		transition: box-shadow 0.3s ease;
+	}
+
+
+	&__inner {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0;
+	}
+
+	&__name {
+		margin-bottom: auto;
+		max-height: 60px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 1.4;
+		color: $dark-900;
+		overflow: hidden;
+	}
+
+	&__state {
+		text-transform: uppercase;
+		margin-top: auto;
+		margin-bottom: 5px;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 1;
+		color: $green-900;
+
+		&--ends {
+			color: $red-900;
+		}
+
+		&--absent {
+			color: $silver-600;
+		}
+	}
+
+	&__payment {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__prices {
+		display: flex;
+		align-items: flex-start;
+		align-items: baseline;
+	}
+
+	&__price {		
+		margin-right: 10px;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 1;
+
+		&--previous {
+			font-size: 12px;
+			position: relative;
+			color: $silver-600;
+		}
+
+		&--previous span::after {
+			@include pseudo();
+			background-color: $silver-600;
+			width: 100%;
+			height: 1px;
+			bottom: 50%;
+			transform: rotate(-15deg);
+		}
+	}
+
+	&__ruble {
+		font-size: 14px;
+	}
+
+	&__rating {
+		height: 16px;
+		padding-right: 20px;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1;
+		@include backgroundimage("../images/favicons/global/star.svg", right 50%, no-repeat);
+	}
+
+	&__button {
+		padding: 8px;
+		width: 32px;
+		height: 32px;
+	}
+
+	&__button:active svg {
+		fill: rgba($white, 0.7);
+	}
+
+	&__promos {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		top: 18px;
+		left: 18px;
+	}
+
+	&__promo {
+		padding: 3px 6px;
+		border-radius: 6px;
+		margin-bottom: 6px;
+		font-weight: 700;
+		font-size: 10px;
+		line-height: 1;
+		color: $white;
+		text-transform: uppercase;
+
+		&--hit {
+			background-color: $orange-900;
+		}
+
+		&--sale {
+			background-color: $red-900;
+		}
+
+		&--new {
+			background-color: $green-900;
+		}
+	}
+
+	&__promo:last-child {
+		margin-bottom: 0;
+	}
+
+
+	&__favorite {
+		position: absolute;
+		top: 18px;
+		right: 18px;
+		outline: transparent;
+
+		padding: 0; 
+		border: 0;
+		background-color: transparent;
+		transition: outline-color 0.3s ease;
+	}
+
+	&__favorite:focus {
+		@include link-focus($green-200);
+	}
+
+	&__favorite {
+		@include link-transition-fill();
+	}
+
+	&__favorite:hover svg {
+		fill: $yellow-900;
+	}
+
+	&__favorite:active svg {
+		fill: rgba($yellow-900, 0.8);
+	}
+}
+
+.smallcard:hover {
+	border-color: $green-900;
+}

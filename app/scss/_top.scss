@@ -2,6 +2,11 @@
 	padding-top: 70px;
 	padding-bottom: 5px;
 
+	&--promotions {
+		padding-bottom: 70px;
+		background-color: $silver-100;
+	}
+
 	&__title {
 		margin-bottom: 30px;
 	}

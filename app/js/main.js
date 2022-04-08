@@ -117,6 +117,18 @@
 	});
 
 	// mixitup
+	let topContainer = document.querySelector('[data-ref="container-1"]');	
+	let promotionsContainer = document.querySelector('[data-ref="container-2"]');
 
-	var mixer = mixitup('.top__cards');
+	let config = {
+		controls: {
+			scope: 'local'
+		}
+	}
+
+	var mixerTop = mixitup(topContainer, config);
+	var mixerPromotions = mixitup(promotionsContainer, config);
+
+	// var mixerTop = mixitup('.top__cards--top');
+	// var mixerPromotions = mixitup('.top__cards--promotions');
 })();

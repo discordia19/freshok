@@ -315,7 +315,7 @@
   
   &__item::after {
     @include pseudo(absolute, block, '');
-    @include backgroundimage("../images/favicons/cart/close-s.svg");
+    @include backgroundimage("../images/favicons/cart/close-s.svg", "center", "no-repeat");
     right: 12px;
     top: 12px;
     width: 10px;
@@ -369,11 +369,11 @@
   }
 
   &__counter-btn--subtract {
-    @include backgroundimage("../images/favicons/counter/minus.svg");
+    @include backgroundimage("../images/favicons/counter/minus.svg", center, no-repeat);
   }
   
   &__counter-btn--add {
-    @include backgroundimage("../images/favicons/counter/plus.svg");
+    @include backgroundimage("../images/favicons/counter/plus.svg", center, no-repeat);
   }
 
   &__count {

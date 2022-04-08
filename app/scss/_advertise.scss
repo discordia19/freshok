@@ -1,0 +1,59 @@
+.advertise {
+	padding: 70px 0;
+
+	&__slides {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		gap: 30px;
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 30px;
+		height: 300px;
+		color: $dark-500;
+		border-radius: 6px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}	
+
+	&__slide--light {
+		text-shadow: 1px 1px 0px rgba($black, 0.25);
+		color: $white;
+	}
+
+	&__name {
+		margin-bottom: 20px;
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 1;
+	}
+
+	&__description {
+		margin-bottom: 15px;
+		max-width: 65%;
+		font-family: 'Ruda';
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 1.4;
+	}
+
+	&__description--light {
+		text-shadow: 2px 2px 0px rgba($black, 0.25);
+	}
+
+	&__link {
+		padding-bottom: 5px;
+		border-bottom: 2px solid $dark-500;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1;
+	}
+
+	&__link--light {
+		border-bottom: 2px solid $white;
+	}
+}
