@@ -72,23 +72,23 @@ body {
     letter-spacing: 0.03em;
   }
 
-	&__input--search {
-    position: relative;
-    padding: 15px 0 15px 50px;
-    background-image: url('../images/favicons/header/search-fav.svg')
-    ;
-    background-position: 10px 50%;
-    background-repeat: no-repeat;
-  }
+	&__input {
+		&--search {
+			position: relative;
+			padding: 15px 0 15px 50px;
+			background-image: url('../images/favicons/header/search-fav.svg');
+			background-position: 10px 50%;
+			background-repeat: no-repeat;
+		}
 
-	&__input::placeholder {
-		color: $dark-800;
-		opacity: 0.15;
-		transition: opacity 0.3s ease;
-	}
-	
-	&__input:hover::placeholder, &__input:focus, &__input:focus::placeholder {
-		opacity: 1;
+		&--subscribe {
+			max-width: 180px;
+			padding: 0;
+
+			&::placeholder {
+				padding: 0 10px;
+			}
+		}
 	}
 	
   &__button {
@@ -107,57 +107,58 @@ body {
     background-color: $dark-800;
     outline: transparent;
     transition: background-color 0.3s ease, outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+		&--subscription {
+			padding: 12px 16px;
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 1.3;
+			background-color: $green-900;
+		}
+	
+		&:hover {
+			background-color: rgba($dark-800, 0.85);
+		}
+	
+		&--subscription:hover {
+			background-color: rgba($green-900, 0.85);
+		}
+	
+		&:focus {
+			outline: 3px solid $green-200;
+		}
+	
+		&:active {
+			color: rgba($white, 0.5);
+			outline: transparent;
+			box-shadow: inset 0px 4px 4px rgba($black, 0.25);
+		}
   }
 
-	&__button--subscription {
-		padding: 12px 16px;
-		font-weight: 700;
-		font-size: 12px;
-		line-height: 1.3;
-		background-color: $green-900;
-	}
-
-	&__button:hover {
-    background-color: rgba($dark-800, 0.85);
-  }
-
-	&__button--subscription:hover {
-    background-color: rgba($green-900, 0.85);
-  }
-
-  &__button:focus {
-    outline: 3px solid $green-200;
-  }
-
-  &__button:active {
-    color: rgba($white, 0.5);
-    outline: transparent;
-    box-shadow: inset 0px 4px 4px rgba($black, 0.25);
-  }
 }
 
 // Standart links transitions
 
-.link--state {
+.outline {
 	border-radius: 3px;
 	outline: transparent;
-	@include link-transition();
-}
+	transition: opacity 0.3s ease, outline-color 0.3s ease;
 
-.link--state svg {
-	@include link-transition-fill();
-}
+	svg {
+		transition: fill 0.3s ease;
+	}
 
-.link--state:focus {
-	@include link-focus($green-200);
-}
-
-.link--state:hover {
-	@include link-hover();
-}
-
-.link--state:active svg {
-	fill: $green-200;
+	&:focus {
+		outline: 3px solid $green-200;
+	}
+	
+	&:hover {
+		opacity: 0.7;
+	}
+	
+	&:active svg {
+		fill: $green-200;
+	}
 }
 
 // Buttons
@@ -177,40 +178,42 @@ body {
 	line-height: 1.3;
 	background-color: $green-900;
 	outline: transparent;
+	
+	transition: opacity 0.3s ease, outline-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 
-	@include button-transition();
-}
+	&:focus {
+		outline: 3px solid $green-200;
+	}
+	
+	&:hover {
+		background-color: $green-400;
+	}
+	&:active {
+		box-shadow: inset 0px 4px 4px rgba($white, 0.25);
+		color: rgba($white, 0.5);
+		outline: transparent;
+	}
 
-.button:focus {
-	@include button-focus($green-200);
-}
-
-.button:hover {
-	@include button-hover();
-}
-.button:active {
-	@include button-active();
-}
-
-.button--transparent {
-	color: $green-900;
-	border: 1px solid $green-900;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 1.3;
-	background-color: transparent;
-}
-
-.button--transparent:hover {
-	background-color: $green-100;
-}
-
-.button--transparent:focus {
-	outline: 3px solid $green-200;
-}
-
-.button--transparent:active {
-	color: rgb($green-900, 0.8);
+	&--transparent {
+		color: $green-900;
+		border: 1px solid $green-900;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 1.3;
+		background-color: transparent;
+	}
+	
+	&--transparent:hover {
+		background-color: $green-100;
+	}
+	
+	&--transparent:focus {
+		outline: 3px solid $green-200;
+	}
+	
+	&--transparent:active {
+		color: rgb($green-900, 0.8);
+	}
 }
 
 // Title
@@ -223,247 +226,6 @@ body {
 	text-align: center;
 	color: $dark-900;
 	text-transform: uppercase;
-}
-
-// Card
-
-.card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	padding-top: 50px;
-	border: 1px solid $silver-600;
-	border-radius: 6px;
-	height: 410px;
-	background-color: $white;
-	transition: border-color 0.3s ease;
-
-	&--small {
-		flex-direction: row;
-		padding: 12px 12px 12px 125px;
-		height: 125px;
-		@include backgroundimage("../images/goods/s-m/pineapple.jpg", 12px, no-repeat);
-	}
-
-	&__image {
-		position: relative;
-		display: flex;
-		align-self: center;
-		justify-content: center;
-		width: 100%;
-		height: 225px;
-		margin-bottom: 10px;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-image: url("../images/goods/m/pineapple.jpg" );
-		transition: box-shadow 0.3s ease;
-	}
-
-	&__image:hover {
-		box-shadow: inset 0 0 0 1000px rgba($black, 0.1);
-	}
-
-	&__image::after {
-		@include pseudo();
-		border-radius: 50%;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%) translateY(-50%) scale(0.0);
-		width: 50px;
-		height: 50px;
-		background-color: $white;
-		background-position: center;
-		background-repeat: no-repeat;
-		transition: transform 0.3s ease;
-	}
-
-	&__image:hover::after {
-		transform: translateX(-50%) translateY(-50%) scale(1);
-		background-image: url(../images/favicons/global/search-s.svg);
-		background-color: $white;
-	}
-
-	&__inner {
-		display: flex;
-		flex-grow: 1;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 0 18px 18px;
-
-		&--small {
-			padding: 0;
-		}
-	}
-
-	&__name {
-		margin-bottom: 10px;
-		max-height: 60px;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 1.4;
-		color: $dark-900;
-		overflow: hidden;
-
-		&--small {
-			margin-bottom: auto;
-		}
-	}
-
-	&__state {
-		text-transform: uppercase;
-
-		&--ends {
-			color: $red-900;
-		}
-
-		&--absent {
-			color: $silver-600;
-		}
-
-
-		&--small {
-			margin-top: auto;
-			margin-bottom: 5px;
-			font-weight: 600;
-			font-size: 10px;
-			line-height: 1;
-			color: $green-900;
-		}
-	}
-
-	&__payment {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
-
-	&__prices--small {
-		display: flex;
-		align-items: flex-start;
-		align-items: baseline;
-	}
-
-	&__price {
-		font-size: 14px;
-		line-height: 1;
-
-		&--small {
-			margin-right: 10px;
-			font-weight: 600;
-			font-size: 20px;
-			line-height: 100%;
-		}
-
-		&__price--mini {
-			font-size: 12px;
-		}
-
-		&--previous {
-			position: relative;
-			color: $silver-600;
-		}
-
-		&--previous span::after {
-			@include pseudo();
-			background-color: $silver-600;
-			width: 100%;
-			height: 1px;
-			bottom: 50%;
-			transform: rotate(-15deg);
-		}
-	}
-
-	&__ruble {
-		font-size: 14px;
-	}
-
-	&__rating {
-		height: 16px;
-		padding-right: 20px;
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 1;
-		@include backgroundimage("../images/favicons/global/star.svg", right 50%, no-repeat);
-	}
-
-	&__button {
-		padding: 8px;
-		width: 32px;
-		height: 32px;
-	}
-
-	&__button:active svg {
-		fill: rgba($white, 0.7);
-	}
-
-	&__promos {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		top: 18px;
-		left: 18px;
-	}
-
-	&__promo {
-		padding: 3px 6px;
-		border-radius: 6px;
-		margin-bottom: 6px;
-		font-weight: 700;
-		font-size: 10px;
-		line-height: 1;
-		color: $white;
-		text-transform: uppercase;
-
-		&--hit {
-			background-color: $orange-900;
-		}
-
-		&--sale {
-			background-color: $red-900;
-		}
-
-		&--new {
-			background-color: $green-900;
-		}
-	}
-
-	&__promo:last-child {
-		margin-bottom: 0;
-	}
-
-
-	&__favorite {
-		position: absolute;
-		top: 18px;
-		right: 18px;
-		outline: transparent;
-
-		padding: 0; 
-		border: 0;
-		background-color: transparent;
-		transition: outline-color 0.3s ease;
-	}
-
-	&__favorite:focus {
-		@include link-focus($green-200);
-	}
-
-	&__favorite {
-		@include link-transition-fill();
-	}
-
-	&__favorite:hover svg {
-		fill: $yellow-900;
-	}
-
-	&__favorite:active svg {
-		fill: rgba($yellow-900, 0.8);
-	}
-}
-
-.card:hover {
-	border-color: $green-900;
 }
 
 // mixitup

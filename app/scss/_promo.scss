@@ -69,33 +69,37 @@
 		background-color: rgba($white, 0.8);
 		outline: transparent;
 		transition: background-color 0.3s ease, outline-color 0.3s ease;
-	}
 
-	&__pagination svg {
-		transition: fill 0.3s ease;
-	}
-
-	&__pagination--prev {
-		left: 3%;
-	}
-
-	&__pagination--next {
-		right: 3%;
-	}
-
-	&__pagination--disable svg {
-		fill: $silver-600;
-	}
-
-	&__pagination:focus {
-		outline: 3px solid rgba($green-900, 0.8);
-	}
-
-	&__pagination:hover {
-		background-color: $green-200;
-	}
-
-	&__pagination:hover, &__pagination:active svg {
-		fill: $green-900;
+		svg {
+			transition: fill 0.3s ease;
+		}
+	
+		&--prev {
+			left: 3%;
+		}
+	
+		&--next {
+			right: 3%;
+		}
+	
+		&--disable {
+			svg {
+				fill: $silver-600;
+			}
+		}
+	
+		&:focus {
+			outline: 3px solid rgba($green-900, 0.8);
+		}
+	
+		&:hover {
+			background-color: $green-200;
+		}
+	
+		&:hover, &:active {
+			svg {
+				fill: $green-900;
+			}
+		}
 	}
 }

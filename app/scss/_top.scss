@@ -3,7 +3,7 @@
 	padding-bottom: 5px;
 
 	&--promotions {
-		padding-bottom: 70px;
+		padding-bottom: 60px;
 		background-color: $silver-100;
 	}
 
@@ -30,30 +30,30 @@
 		color: $dark-500;
 		outline: transparent;
 		transition: outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-	}
 
-	&__btn:hover {
-		color: $green-900;
-	}
-
-	&__btn:focus {
-		outline: solid 3px $green-200;
-	}
-
-	&__btn:active {
-		box-shadow: 0px 3px 0px 0px $green-200;
-		outline: transparent;
+		&:hover {
+			color: $green-900;
+		}
+	
+		&:focus {
+			outline: solid 3px $green-200;
+		}
+	
+		&:active {
+			box-shadow: 0px 3px 0px 0px $green-200;
+			outline: transparent;
+		}
 	}
 
 	&__cards {
 		align-self: baseline;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(4, 1fr);
 		gap: 30px;
 		margin-bottom: 50px;
 	}
 
 	&__button {
-		margin: 0 auto ;
+		margin: 0 auto;
 	}
 }

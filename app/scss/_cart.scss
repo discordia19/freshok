@@ -1,0 +1,186 @@
+
+.cart {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 475px;
+  color: $black;
+	transition: position 0.3s ease;
+
+  &--disable {
+    display: none;
+		position: absolute;
+		top:0;
+		right:-500px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px 10px;
+    background-color: $white;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $black;
+    margin-bottom: 12px;
+  }
+
+  &__clear {
+    @include buttonreset;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2;
+    color: $black;
+  }
+
+  &__close {
+    @include buttonreset;
+    width: 25px;
+    height: 25px;
+    background-image: url('../images/favicons/cart/close-m.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__goods {
+    flex-grow: 1;
+    background-color: $silver-100;
+    overflow-y: auto;
+  } 
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    color: $dark-900;
+    background-color: $white;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&::after {
+			@include pseudo(absolute, block, '');
+			@include backgroundimage("../images/favicons/cart/close-s.svg", "center", "no-repeat");
+			right: 12px;
+			top: 12px;
+			width: 10px;
+			height: 10px;
+		}
+  }
+
+
+  &__image {
+    margin-right: 30px;
+  }
+
+  &__info {
+    margin-right: auto;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__amount {
+    align-self: end;
+    display: flex;
+    align-items: center;
+    height: 25px;
+  }
+
+  &__counter {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  &__counter-btn {
+    @include buttonreset;
+    width: 25px;
+    height: 25px;
+    background-color: $green-900;
+    transition: background-color ;
+		
+		&--subtract {
+			@include backgroundimage("../images/favicons/counter/minus.svg", center, no-repeat);
+		}
+			
+		&--add {
+			@include backgroundimage("../images/favicons/counter/plus.svg", center, no-repeat);
+		}
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    background-color: rgba($green-900, 0.1);
+  }
+
+  &__curr-summary {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+
+  &__result {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+		background-color: $white;
+  }
+
+  &__checkout {
+    @include buttonreset;
+    padding: 20px;
+    color: $white;
+    background-color: $green-900;
+  }
+
+	&::before {
+		@include pseudo(fixed, block, '');
+		top: 0; 
+		bottom: 0;
+		left: 0; 
+		right: 0;
+		z-index: -1;
+		background-color: rgba($black, 0.1);;
+	}
+}

@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-	
+
 	// Cart
 
 	class Cart {
@@ -74,7 +74,7 @@
 	}
 
 	const cart = document.querySelector('.cart');
-	const openCart = document.querySelector('.header__cartlink');
+	const openCart = document.querySelector('.header__cartlink--cartlink');
 	new Cart(cart, openCart);
 
 	// Search
@@ -86,8 +86,11 @@
 	// Catalog
 
 	document.addEventListener('click', (event) => {
-		if (event.target.dataset.actionId === 'catalog') {
-			let catalog = document.querySelector('.catalog__menu');
+		let catalog = document.querySelector('.catalog__menu');
+
+		if (event.target.dataset.actionId === 'toggleCatalog' || 
+				!catalog.classList.contains('catalog__menu--disable') && !event.target.className.includes('catalog')) {
+
 			let button = document.querySelector('.catalog__button');
 
 			catalog.classList.toggle('catalog__menu--disable');
@@ -117,7 +120,7 @@
 	});
 
 	// mixitup
-	let topContainer = document.querySelector('[data-ref="container-1"]');	
+	let topContainer = document.querySelector('[data-ref="container-1"]');
 	let promotionsContainer = document.querySelector('[data-ref="container-2"]');
 
 	let config = {
