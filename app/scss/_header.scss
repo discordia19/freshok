@@ -35,11 +35,13 @@
 		}
 		
 		&--truck {
+			// background-image: url('../images/stack/sprite.svg#header--truck-fav');
 			background-image: url('../images/favicons/header/truck-fav.svg');
 		}
 		
 		&--phone {
-			background-image: url('../images/favicons/header/tel-fav.svg');
+			// background-image: url('../images/stack/sprite.svg#header--tel-fav');
+			background-image: url('../images/favicons/header/tel-fav.svg');	
 		}
 	}
 
@@ -86,7 +88,7 @@
     height: 50px;
     border-radius: 6px;
     outline: transparent;
-    transition:  background-color 0.3s ease;
+    transition: background-color 0.3s ease, outline-color 0.3s ease;
 
     svg {
       fill: $white;

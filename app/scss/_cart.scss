@@ -128,7 +128,7 @@
     width: 25px;
     height: 25px;
     background-color: $green-900;
-    transition: background-color ;
+    transition: background-color 0.3s ease;
 		
 		&--subtract {
 			@include backgroundimage("../images/favicons/counter/minus.svg", center, no-repeat);

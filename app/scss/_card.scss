@@ -107,11 +107,59 @@
 		}
 	}
 
+	&__prices {
+		margin-right: auto;
+	}
+
 	&__payment {
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
 		align-items: flex-end;
 	}
+
+	&__control {
+		display: flex;
+		align-self: center;
+		margin-right: 20px;
+	}
+
+	&__input {
+		max-width: 40px;
+		height: 25px;
+		background-color: $silver-300;
+		text-align: center;
+		border: none;
+		transition: background-color 0.3s ease;
+	}
+
+	&__btn {
+    @include buttonreset;
+    width: 25px;
+    height: 25px;
+    background-color: $green-900;
+    transition: background-color 0.3s ease, outline-color 0.3s ease, box-shadow 0.3s ease;
+
+		&:focus {
+			outline: 3px solid $green-200;
+		}
+
+		&:hover {
+			background-color: $green-400;
+		}
+
+		&:active {
+			box-shadow: inset 0px 4px 4px rgb(255 255 255 / 25%);
+			outline: transparent;
+		}
+		
+		&--subtract {
+			@include backgroundimage("../images/favicons/counter/minus.svg", center, no-repeat);
+		}
+			
+		&--add {
+			@include backgroundimage("../images/favicons/counter/plus.svg", center, no-repeat);
+		}
+  }
 
 	&__prices {
 		&--small{
@@ -176,6 +224,7 @@
 
 	&__promos {
 		position: absolute;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -215,6 +264,8 @@
 		top: 18px;
 		right: 18px;
 		outline: transparent;
+		width: 32px;
+		height: 29px;
 
 		padding: 0; 
 		border: 0;
@@ -231,6 +282,14 @@
 	
 		&:active svg {
 			fill: rgba($yellow-900, 0.8);
+		}
+
+		&--enable svg {
+			fill: $yellow-900;
+		}
+
+		svg {
+			transition: fill 0.3s ease;
 		}
 	}
 }

@@ -1,6 +1,23 @@
 'use strict';
 
 (() => {
+	// Card name shortening
+
+	const textContentShortening = (cssQuery, MAX_LENGTH) => {
+		const textElements = document.querySelectorAll(cssQuery);
+
+		textElements.forEach((textElement) => {
+			const currentText = textElement.textContent;
+
+			if (currentText.length > MAX_LENGTH) {
+				textElement.textContent = `${currentText.substring(0, (currentText[MAX_LENGTH - 1] === ' ') ? (MAX_LENGTH - 3) : (MAX_LENGTH - 2))}${String.fromCharCode(8230)}`;
+			} 
+		});
+	};
+
+	textContentShortening('.card__name-link', 83);
+	textContentShortening('.smallcard__name-link', 55);	
+
 
 	// Cart
 
@@ -77,6 +94,61 @@
 	const openCart = document.querySelector('.header__cartlink--cartlink');
 	new Cart(cart, openCart);
 
+	// Cards
+	
+	class Card {
+		constructor(elem) {
+			this._elem = elem;
+			this._favorite = elem.querySelector('.card__favorite');
+			elem.onclick = this.onClick.bind(this);
+		}
+
+		subtract(event) {
+			const target = event.target;
+
+			const itemsCountDisplay = target.nextElementSibling;
+			let curAmount = itemsCountDisplay.value; 
+
+			if (curAmount === '') return;
+
+			if (curAmount > 1) {
+				itemsCountDisplay.value = --curAmount;
+			}
+		}
+
+		add(event) {
+			const target = event.target;
+
+			const itemsCountDisplay = target.previousElementSibling;
+			let curAmount = itemsCountDisplay.value; 
+			
+			if (curAmount === '') {
+				itemsCountDisplay.value = 1;
+				itemsCountDisplay.style.backgroundColor = '#E0EDCF';
+			}
+
+			if (curAmount < 99) {
+				itemsCountDisplay.value = ++curAmount;
+			}
+		}
+
+		toggleFavorite(event) {
+			this._favorite.classList.toggle('card__favorite--enable');
+		}
+
+		onClick(event) {
+			let action = event.target.dataset.action;
+			if (action) {
+				this[action](event);
+			}
+		}
+	}
+
+	const cards = document.querySelectorAll('.card');
+	cards.forEach((card) => {
+		new Card(card);
+	})
+
 	// Search
 
 	const searchformBtn = document.querySelector('.form__button');
@@ -131,7 +203,4 @@
 
 	var mixerTop = mixitup(topContainer, config);
 	var mixerPromotions = mixitup(promotionsContainer, config);
-
-	// var mixerTop = mixitup('.top__cards--top');
-	// var mixerPromotions = mixitup('.top__cards--promotions');
 })();

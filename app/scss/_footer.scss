@@ -43,6 +43,10 @@
 		row-gap: 20px;
 	}
 
+	&__item {
+		max-width: 200px;
+	}
+
 	&__contacts {
 		display: flex;
 		flex-direction: column;
@@ -56,8 +60,10 @@
 	&__socials {
 		display: flex;
 		justify-content: flex-start;
+		flex-wrap: wrap;
 		align-items: center;
 		column-gap: 10px;
+		max-width: 230px;
 	}
 
 	&__social-link {
