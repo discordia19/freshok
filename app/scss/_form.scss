@@ -46,6 +46,12 @@
     outline: transparent;
     transition: background-color 0.3s ease, outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 
+		&--mobile {
+			@include mq(tablet-3, max) {
+				border-radius: 0;
+			}
+		}
+
 		&--subscription {
 			padding: 12px 16px;
 			font-weight: 700;

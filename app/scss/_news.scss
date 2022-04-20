@@ -1,11 +1,21 @@
 .news {
 	 padding-bottom: 70px; 
 
+	 @include mq(tablet, max) {
+		padding-bottom: 50px; 
+	 }
+
 	 &__top {
 		 display: flex;
 		 justify-content: space-between;
 		 align-items: center;
 		 margin-bottom: 30px;
+
+		 @include mq(tablet, max) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 12px;
+		}
 	 }
 
 	 &__all {
@@ -17,6 +27,10 @@
 			box-shadow: 0px 3px 0px -1px $green-900;
 			outline-color: transparent;
 			transition: outline-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+			@include mq(tablet, max) {
+				line-height: 1;
+			}
 			
 			&:hover {
 				color: $green-400;
@@ -37,6 +51,15 @@
 		 display: grid;
 		 grid-template-columns: repeat(3, 1fr);
 		 gap: 30px;
+
+		 @include mq(tablet-2, max) {
+			grid-template-columns: repeat(2, 1fr);
+		 }
+
+		 @include mq(tablet, max) {
+			grid-template-columns: 1fr;
+			gap: 15px;
+		 }
 	 }
 
 	 &__item {
@@ -97,5 +120,6 @@
 
 	 &__name {
 		 letter-spacing: 0.1px;
+		 @include text-cut(5);
 	 }
 }

@@ -13,6 +13,7 @@ import fonter from 'gulp-fonter'
 import ttf2woff2 from 'gulp-ttf2woff2';
 import svgSprite from 'gulp-svg-sprite';
 import cheerio from 'gulp-cheerio';
+import fileInclude from 'gulp-file-include';
 
 const scss = gulpSass(dartSass);
 const browserSync = bs.create();
@@ -32,6 +33,18 @@ export const server = () => {
 
 export const clearDist = () => {
 	return del('dist');
+}
+
+// HTML
+
+export const htmlInclude = () => {
+	return gulp.src('app/html/**/*.html')
+		.pipe(fileInclude({
+			prefix: '@',
+			basepath: '@file'
+		}))
+		.pipe(gulp.dest('app'))
+		.pipe(browserSync.stream());
 }
 
 // Styles 
@@ -205,6 +218,7 @@ export const build = gulp.series(clearDist, images, copyToDist);
 // Watcher
 
 export const watch = () => {
+	gulp.watch(['app/html/**/*.html'], htmlInclude);
 	gulp.watch(['app/scss/**/*.scss'], styles);
 	gulp.watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
 	gulp.watch(['app/**/*html']).on('change', browserSync.reload);
@@ -212,5 +226,5 @@ export const watch = () => {
 
 
 export default gulp.series(
-	gulp.parallel(styles, scripts, server, watch)
+	gulp.parallel(htmlInclude, styles, scripts, server, watch)
 )

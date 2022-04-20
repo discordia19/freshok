@@ -1,10 +1,29 @@
 .advertise {
 	padding: 70px 0;
 
+	@include mq(tablet-3, max) {
+		padding: 45px 0;
+	}
+
 	&__slides {
 		display: grid;
 		grid-template-columns: 2fr 1fr 1fr;
 		gap: 30px;
+		
+		@include mq(tablet-3, max) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+
+		@include mq(tablet-2, max) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 15px;
+		}
+
+		@include mq(tablet, max) {
+			grid-template-columns: 1fr;
+			gap: 15px;
+		}
 	}
 
 	&__slide {
@@ -19,6 +38,11 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+
+		@include mq(tablet, max) {
+			justify-content: flex-start;
+			padding: 75px 30px 30px;
+		}
 	}	
 
 	&__slide--light {
@@ -32,21 +56,41 @@
 		font-size: 12px;
 		line-height: 1;
 		text-transform: uppercase;
+		@include text-cut(1);
+
+		@include mq(tablet, max) {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__description {
 		margin-bottom: 15px;
-		max-width: 70%;
+		max-width: 80%;
 		font-family: 'Ruda';
 		font-weight: 600;
 		font-size: 30px;
 		line-height: 1.4;
 		text-transform: uppercase;
+		@include text-cut(3);
+
+		@include mq(tablet, max) {
+			margin-bottom: auto;
+			font-size: 24px;
+		}
+
+		&--short {
+			@include mq(tablet, max) {
+				max-width: 50%;
+			}
+		}
+
+		&--light {
+			text-shadow: 2px 2px 0px rgba($black, 0.25);
+		}
 	}
 
-	&__description--light {
-		text-shadow: 2px 2px 0px rgba($black, 0.25);
-	}
+	
+
 
 	&__link {
 		padding-bottom: 5px;
@@ -54,6 +98,7 @@
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 1;
+		text-transform: uppercase; 
 	}
 
 	&__link--light {

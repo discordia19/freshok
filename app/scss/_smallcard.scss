@@ -2,26 +2,16 @@
 .smallcard {
 	position: relative;
 	display: flex;
-	padding: 12px 12px 12px 125px;
+	padding: 12px;
 	border: 1px solid $silver-600;
 	border-radius: 6px;
 	height: 125px;
 	background-color: $white;
 	transition: border-color 0.3s ease;
-	@include backgroundimage("../images/goods/s-m/pineapple.jpg", 12px, no-repeat);
 
-	&__image {
-		position: relative;
-		display: flex;
-		align-self: center;
-		justify-content: center;
-		width: 100%;
-		height: 225px;
-		margin-bottom: 10px;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-image: url("../images/goods/m/pineapple.jpg" );
-		transition: box-shadow 0.3s ease;
+	&__img {
+		width: 100px;
+		height: 100px;
 	}
 
 	&__inner {
@@ -39,7 +29,7 @@
 		font-size: 14px;
 		line-height: 1.4;
 		color: $dark-900;
-		overflow: hidden;
+		@include text-cut(3);
 	}
 
 	&__state {
@@ -77,6 +67,7 @@
 		font-weight: 600;
 		font-size: 20px;
 		line-height: 1;
+		white-space: nowrap;
 
 		&--previous {
 			font-size: 12px;

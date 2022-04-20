@@ -15,8 +15,8 @@
 		});
 	};
 
-	textContentShortening('.card__name-link', 83);
-	textContentShortening('.smallcard__name-link', 55);	
+	// textContentShortening('.card__name-link', 83);
+	// textContentShortening('.smallcard__name-link', 55);	
 
 
 	// Cart
@@ -91,8 +91,37 @@
 	}
 
 	const cart = document.querySelector('.cart');
-	const openCart = document.querySelector('.header__cartlink--cartlink');
+	const openCart = document.querySelector('.header__user-link--cartlink');
 	new Cart(cart, openCart);
+
+	// Menu 
+
+	class Menu {
+		constructor(elem, openBtn) {
+			this._elem = elem;
+			this._open = openBtn;
+			elem.onclick = this.onClick.bind(this);
+			openBtn.onclick = this.onClick.bind(this);
+		}
+
+		toggleMenu() {
+			console.log('inToggle')
+			this._elem.classList.toggle('menu--disable');
+			document.body.classList.toggle('scroll-off');
+		}
+
+		onClick(event) {
+			console.log('hello')
+			let action = event.target.dataset.action;
+			if (action) {
+				this[action](event);
+			}
+		}
+	}
+
+	const menu = document.querySelector('.menu');
+	const openMenu = document.querySelector('.header__burger');
+	new Menu(menu, openMenu);
 
 	// Cards
 	
@@ -109,10 +138,11 @@
 			const itemsCountDisplay = target.nextElementSibling;
 			let curAmount = itemsCountDisplay.value; 
 
-			if (curAmount === '') return;
 
-			if (curAmount > 1) {
+			if (curAmount > 0) {
 				itemsCountDisplay.value = --curAmount;
+
+				if (curAmount == 0) itemsCountDisplay.style.backgroundColor = '#EBEBEB';
 			}
 		}
 
@@ -122,12 +152,12 @@
 			const itemsCountDisplay = target.previousElementSibling;
 			let curAmount = itemsCountDisplay.value; 
 			
-			if (curAmount === '') {
-				itemsCountDisplay.value = 1;
-				itemsCountDisplay.style.backgroundColor = '#E0EDCF';
-			}
 
 			if (curAmount < 99) {
+				if (curAmount === '0') {
+					itemsCountDisplay.style.backgroundColor = '#E0EDCF';
+				}
+
 				itemsCountDisplay.value = ++curAmount;
 			}
 		}
@@ -152,8 +182,14 @@
 	// Search
 
 	const searchformBtn = document.querySelector('.form__button');
+	const showSearchBtn = document.querySelector('.header__user-link--search');
 
 	searchformBtn.addEventListener('click', (event) => (event.preventDefault()));
+	showSearchBtn.addEventListener('click', (event) => {
+		const search = document.querySelector('.header__form');
+		
+		search.classList.toggle('header__form--active');
+	});
 
 	// Catalog
 
@@ -178,9 +214,51 @@
 		wrapperClass: 'promo__wrapper',
 
 		navigation: {
-			nextEl: '.promo__pagination--next',
-			prevEl: '.promo__pagination--prev',
-			disabledClass: 'promo__pagination--disable'
+			nextEl: '.promo__arrow--next',
+			prevEl: '.promo__arrow--prev',
+			disabledClass: 'promo__arrow--disable'
+		},
+
+		pagination: {
+			el: '.promo__pagination',
+			type: 'bullets',
+			bulletClass: 'promo__bullet',
+			bulletActiveClass: 'promo__bullet--active',
+		},
+
+		a11y: {
+			firstSlideMessage: 'Первая акция',
+			prevSlideMessage: 'Предыдущая акция',
+			nextSlideMessage: 'Следующая акция',
+			lastSlideMessage: 'Последняя акция'
+		}
+	});
+
+	const partnersSwiper = new Swiper('.partners__slider', {
+		loop: false,
+		slideClass: 'partners__item',
+		wrapperClass: 'partners__list',
+		slidesPerView: 8,
+
+		// navigation: {
+		// 	nextEl: '.promo__pagination--next',
+		// 	prevEl: '.promo__pagination--prev',
+		// 	disabledClass: 'promo__pagination--disable'
+		// },
+
+		breakpoints: {
+			0: {
+				slidesPerView: 2
+			},
+            560: {
+                slidesPerView: 4
+            },
+            800: {
+                slidesPerView: 6
+            },
+            972: {
+                slidesPerView: 8
+            },
 		},
 
 		a11y: {
@@ -201,6 +279,6 @@
 		}
 	}
 
-	var mixerTop = mixitup(topContainer, config);
-	var mixerPromotions = mixitup(promotionsContainer, config);
+	// var mixerTop = mixitup(topContainer, config);
+	// var mixerPromotions = mixitup(promotionsContainer, config);
 })();

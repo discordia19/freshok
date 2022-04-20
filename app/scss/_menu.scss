@@ -1,0 +1,140 @@
+.menu {
+	position: absolute;
+	z-index: 999;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.3;
+	color: $dark-800;
+	background-color: $white;
+	overflow: auto;
+	box-shadow: 10px 0 0 10000px rgba($black, 0.1);
+
+	&::after {
+		@include pseudo(fixed, block, '');
+		top: 0; 
+		bottom: 0;
+		left: 0; 
+		right: 0;
+		z-index: -1001;
+	}
+
+	&--disable {
+		display: none;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 25px 25px 15px;
+	}
+
+	&__close {
+		@include buttonreset;
+    width: 25px;
+    height: 25px;
+    background-image: url('../images/favicons/cart/close-m.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+	}
+
+	&__enter {
+		display: flex;
+		align-items: center;
+		padding: 15px 10px;
+
+		color: $white;
+		background-color: $green-900;
+
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+	}
+
+	&__svg {
+		margin-right: 15px;
+	}
+
+	&__login {
+		position: relative;
+		margin-right: 30px;
+
+		&::after{
+			@include pseudo;
+			height: 100%;	
+			width: 1px;
+			background-color: $white;
+			top: 0;
+			right: -15px;
+		}
+
+	}
+
+	&__bottom {
+		padding: 15px;
+	}
+	
+	&__catalog {
+		display: block;
+		padding-left: 40px;
+		margin-bottom: 40px;
+
+		font-weight: 600;
+		line-height: 1;
+		background-image: url(../images/favicons/menu/nav_icon.svg);
+		background-repeat: no-repeat;
+		background-position: 0 center;
+	}
+
+	&__address {
+		margin-bottom: 50px;
+	}
+
+	&__contact {
+		display: block;
+		padding-left: 40px;
+		line-height: 1.2;
+		height: 25px;
+		margin-bottom: 15px;
+
+		background-repeat: no-repeat;
+		background-position: 0 center;
+
+		&--tel {
+			background-image: url(../images/favicons/menu/icon-tel.svg);
+		}
+
+		&--place {
+			height: 40px;
+			background-image: url(../images/favicons/menu/place.svg);
+		}
+	}
+
+	&__socials {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		column-gap: 10px;
+	}
+
+	&__social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: 3px;
+
+		svg {
+			fill: $dark-900;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+}

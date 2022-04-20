@@ -3,17 +3,29 @@
 	
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		padding: 50px 10px 30px;
 		gap: 65px;
+
+		@include mq(tablet-2, max) {
+			padding: 30px 10px;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
 	}
 
 	&__item {
 		padding-left: 75px;
 		padding-right: 10px;
-		max-width: 265px;
+		width: 265px;
 		background-position: left top;
 		background-repeat: no-repeat;
+
+		@include mq(tablet-2, max) {
+			min-height: 65px;
+		}
 
 		&--delivery {
 			background-image: url('../images/favicons/advantages/scooter.svg');
@@ -33,11 +45,13 @@
 		font-size: 16px;
 		line-height: 1.4;
 		margin-bottom: 5px;
+		@include text-cut(2);
 	}
 
 	&__description {
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 1.4;
+		@include text-cut(5);
 	}
 }

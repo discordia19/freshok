@@ -1,11 +1,16 @@
 .header {
   color: $white;
 
+
   &__top {
     padding: 15px 0;
     color: $white;
     text-transform: uppercase;
     background-color: $dark-800;
+
+		@include mq(tablet, max) {
+			padding: 5px 0;
+		}
   }
 
   &__inner {
@@ -14,12 +19,35 @@
     justify-content: space-between;
   }
 
+	&__burger {
+		display: none;
+
+		@include mq(tablet, max) {
+			display: block;
+			padding: 0;
+			border: none;
+			width: 30px;
+			height: 20px;
+			background-color: transparent;
+
+			svg {
+				fill: black;
+			}
+		}
+	}
+
   &__support {
     display: flex;
+		flex-wrap: wrap;
+		max-width: 500px;
   }
 
   &__contact:not(:last-child) {
     margin-right: 50px;
+
+		@include mq(tablet, max) {
+			margin-right: 30px;
+		}
   }
 
 	&__link {
@@ -32,21 +60,41 @@
 			padding-right: 0;
 			background-repeat: no-repeat;
 			background-position: 0 50%;
+
+			@include mq(tablet, max) {
+				padding: 0;
+				display: block;
+				width: 35px;
+				height: 35px;
+				background-position: center;
+			}
 		}
 		
 		&--truck {
-			// background-image: url('../images/stack/sprite.svg#header--truck-fav');
 			background-image: url('../images/favicons/header/truck-fav.svg');
+			@include mq(tablet, max) {
+			}
 		}
 		
 		&--phone {
-			// background-image: url('../images/stack/sprite.svg#header--tel-fav');
-			background-image: url('../images/favicons/header/tel-fav.svg');	
+			background-image: url('../images/favicons/header/tel-fav.svg');
+		}
+	}
+
+	&__link-text {
+		@include mq(tablet, max) {
+			@include sr-only();
 		}
 	}
 
   &__nav-list {
     display: flex;
+		flex-wrap: wrap;
+		max-width: 530px;
+
+		@include mq(tablet, max) {
+			display: none;
+		}
   }
 
   &__nav-item {
@@ -56,13 +104,35 @@
   }
 
   &__bottom {
+		position: relative;
     padding: 25px 0;
     background-color: $green-900;
+
+		@include mq(tablet, max) {
+			padding: 10px 0;
+		}
   }
 
   &__logo {
     margin-right: 25px;
   }
+
+	&__logo-svg {
+		fill: $white;
+
+		@include mq(tablet, max) {
+			display: none;
+		}
+	}
+
+	&__logo-svg--mobile {
+		display: none;
+
+		@include mq(tablet, max) {
+			fill: $white;
+			display: block;
+		}
+	}
 
   &__catalog {
     margin-right: 30px;
@@ -72,6 +142,21 @@
     max-width: 575px;
     flex-grow: 1;
     margin-right: auto;
+
+		@include mq(tablet-3, max) {
+			display: none;
+		}
+
+		&--active {
+			position: absolute;
+			z-index: 1;
+			display: flex;
+			top: 100%;
+			left: 0;
+			right: 0;
+			max-width: 100%;
+			border: 1px solid $black;
+		}
   }
 
   &__user-nav{
@@ -90,9 +175,37 @@
     outline: transparent;
     transition: background-color 0.3s ease, outline-color 0.3s ease;
 
+		@include mq(tablet, max) {
+			align-items: center;
+			width: 40px;
+			height: 40px;
+		}
+
+		&--search {
+			display: none;
+			border: none;
+			padding: 0;
+			background-color: transparent;
+
+			@include mq(tablet-3, max) {
+				display: flex;
+			}
+		}
+
+		&--person {
+			@include mq(tablet, max) {
+				display: none;
+			}
+		}
+		
     svg {
       fill: $white;
       transition: fill 0.3s ease;
+
+			@include mq(tablet, max) {
+				width: 24px;
+				height: 24px;
+			}
     }
 
 		&:hover {
@@ -114,9 +227,17 @@
 		}
   }
 
-  &__user-item:not(:last-child) {
-    margin-right: 10px;
-  }
+  &__user-item {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		@include mq(tablet, max) {
+			&--person {
+				display: none;
+			}
+		}
+	}
 
   &__notification {
     position: absolute;
@@ -125,21 +246,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
+    min-width: 20px;
+		max-width: 100%;
     height: 20px;
+		padding: 0 5px;
     font-weight: 600;
     font-size: 10px;
     line-height: 1;
     letter-spacing: 0.03em;
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: $white;
     color: $red-900;
+
+		&--disabled {
+			display: none;
+		}
   }
+	
+	&__notification-count {
+		word-wrap: break-word;
+		@include text-cut(1);
+	}
 }
 
 
 .catalog {
   position: relative;
+
+	@include mq(tablet-3, max) {
+		margin-right: auto;
+	}
+
+	@include mq(tablet, max) {
+		display: none;
+	}
 
   &__button {
     position: relative;
@@ -156,35 +296,41 @@
     background-repeat: no-repeat;
     background-position: 15px center;
     transition: background-color 0.3s ease, border-radius 0.3s ease;
+		
+		&--active {
+			background-color: $green-200;
+			border-radius: 6px 6px 0 0;
+		}
+	
+		&::after {
+			@include pseudo(absolute, inherit, '');
+			top: 50%;
+			transform: translateY(-50%);
+			right: 20px; 
+			width: 10px;
+			height: 20px;
+			background-image: url('../images/favicons/header/catalog-button-arrow.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			transition: transform 0.3s ease;
+		}
+	
+		&--active::after {
+			transform: translateY(-50%) rotate(-180deg);
+			background-color: $green-200;
+		}
+	
+		&:active, &:hover  {
+			background-color: $green-200;
+		}
   }
 
-  &__button--active {
-    background-color: $green-200;
-    border-radius: 6px 6px 0 0;
-  }
-
-  &__button::after {
-    @include pseudo(absolute, inherit, '');
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px; 
-    width: 10px;
-    height: 20px;
-    background-image: url('../images/favicons/header/catalog-button-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    transition: transform 0.3s ease;
-  }
-
-  &__button--active::after {
-    transform: translateY(-50%) rotate(-180deg);
-    background-color: $green-200;
-  }
-
-  &__button:active, &__button:hover  {
-    background-color: $green-200;
-  }
+	// &__button-span {
+	// 	@include mq(tablet-3, max) {
+	// 		// display: none;
+	// 	}
+	// }
 
   &__menu {
     position: absolute;
@@ -236,3 +382,4 @@
     display: none;
   }
 }
+

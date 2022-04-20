@@ -11,6 +11,10 @@
   color: $black;
 	transition: position 0.3s ease;
 
+	@include mq(phone, max) {
+		width: 100%;
+	}
+
   &--disable {
     display: none;
 		position: absolute;
@@ -181,6 +185,6 @@
 		left: 0; 
 		right: 0;
 		z-index: -1;
-		background-color: rgba($black, 0.1);;
+		background-color: rgba($black, 0.1);
 	}
 }
