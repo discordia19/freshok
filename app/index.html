@@ -22,7 +22,7 @@
 					<span class="sr-only">Открыть меню</span>
 
 					<svg width="30" height="20" data-action="toggleMenu">
-						<use class="logo__use" xlink:href="images/stack/sprite.svg#header--lnr-menu-2" data-action="toggleMenu">
+						<use class="logo__use" xlink:href="images/stack/sprite.svg#header--burger2" data-action="toggleMenu">
 						</use>
 					</svg>
 				</button>
@@ -202,7 +202,7 @@
 							</svg>
 
 							<div class="header__notification">
-								<span class="header__notification-count">123</span>
+								<span class="header__notification-count">12</span>
 							</div>
 						</a>
 					</li>
@@ -244,18 +244,16 @@
 			<use xlink:href="images/stack/sprite.svg#header--user_fav"></use>
 		</svg>
 
-		<a class="menu__login" href="#">
+		<a class="menu__login outline" href="#">
 			Вход
 		</a>
 
-		<a class="menu__register" href="#">
+		<a class="menu__register outline" href="#">
 			Регистрация
 		</a>
 	</div>
 
 	<div class="menu__bottom">
-
-
 		<a class="menu__catalog" href="#">Каталог товаров</a>
 
 		<address class="menu__address">
@@ -268,12 +266,6 @@
 			</a>
 
 			<ul class="menu__socials">
-				<!-- <li class="menu__social">
-					<a class="menu__social-link" href="#">
-						<span class="sr-only">facebook</span>
-					</a>
-				</li> -->
-
 				<li class="menu__social">
 					<a class="menu__social-link outline" href="#">
 						<span class="sr-only">
@@ -322,49 +314,49 @@
 
 		<ul class="menu__list">
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Доставка
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					О нас
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Новости
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Контакты
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Акции
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Вакансии
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Отзывы
 				</a>
 			</li>
 
 			<li class="menu__item">
-				<a class="menu__link" href="#">
+				<a class="menu__link outline" href="#">
 					Публичная оферта
 				</a>
 			</li>
@@ -438,9 +430,129 @@
 
 	<main class="main">
 
-		
+		<section class="promo">
+	<h2 class="sr-only">Актуальные акции</h2>
 
+	<ul class="promo__wrapper">
+		<li class="promo__slide" style="background-image: url('../images/images/promo/carrot2.jpg');">
+
+			<div class="container container--promo">
+				<div class="promo__inner">
+					<h3 class="promo__title">
+						СВЕЖАЧОК ВАМ в ХАТУ
+						<br>
+						<span class="promo__subtitle">
+							Скидка -50%
+						</span>
+					</h3>
+
+					<p class="promo__terms">
+						Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+					</p>
+					<a class="promo__button button outline" type="button">Купить сейчас</a>
+				</div>
+			</div>
+		</li>
+
+		<li class="promo__slide" style="background-image: url('../images/images/promo/tomato2.jpg');">
+
+			<div class="container container--promo">
+				<div class="promo__inner">
+					<h3 class="promo__title">
+						НАКРУТИ СЕБЕ ТОМАТОВ
+						<br>
+						<span class="promo__subtitle">
+							АКЦИЯ: 3 кг по цене 1
+						</span>
+					</h3>
+
+					<p class="promo__terms">
+						Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+					</p>
+					<a class="promo__button button outline" type="button">Купить сейчас</a>
+				</div>
+			</div>
+		</li>
+
+		<li class="promo__slide" style="background-image: url('../images/images/promo/green2.jpg');">
+
+			<div class="container container--promo">
+				<div class="promo__inner">
+					<h3 class="promo__title">
+						Пусть остальные
+						позеленеют от зависти
+						<br>
+						<span class="promo__subtitle">
+							Распродажа зелени
+						</span>
+					</h3>
+					<p class="promo__terms">
+					</p>
+					<a class="promo__button button outline" type="button">Купить сейчас</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<div class="promo__pagination">
 		
+	</div>
+
+	<button class="promo__arrow promo__arrow--prev" type="button">
+		<span class="sr-only">Предыдущий
+			слайд</span>
+		<svg width="20" height="32" viewBox="0 0 20 32" fill="#505050" xmlns="http://www.w3.org/2000/svg">
+			<use xlink:href="images/stack/sprite.svg#promo--arrow-left" data-action="toggleCart"></use>
+		</svg>
+	</button>
+
+	<button class="promo__arrow promo__arrow--next" type="button">
+		<span class="sr-only">Следующий
+			слайд</span>
+		<svg width="20" height="32" viewBox="0 0 20 32" fill="#505050" xmlns="http://www.w3.org/2000/svg">
+			<use xlink:href="images/stack/sprite.svg#promo--arrow-right
+			" data-action="toggleCart"></use>
+		</svg>
+	</button>
+
+</section>
+
+		<section class="advantages">
+	<div class="container">
+		<h2 class="sr-only">Наши преимущества</h2>
+
+		<ul class="advantages__list">
+			<li class="advantages__item advantages__item--delivery">
+				<h3 class="advantages__title">
+					Бесплатная доставка
+				</h3>
+
+				<p class="advantages__description">Для заказов на сумму от 500 ₽ </p>
+			</li>
+
+			<li class="advantages__item advantages__item--return">
+				<h3 class="advantages__title">
+					Возврат товара
+				</h3>
+
+				<p class="advantages__description">
+					Если товары были испорчены
+				</p>
+			</li>
+
+			<li class="advantages__item advantages__item--support">
+				<h3 class="advantages__title">
+					Поддержка 24/7
+				</h3>
+
+				<p class="advantages__description">
+					Лучшие операторы
+				</p>
+			</li>
+		</ul>
+
+	</div>
+</section>
 
 		<section class="top">
 	<div class="container" data-ref="container-1">
@@ -450,8 +562,12 @@
 			<li class="top__category">
 				<button class="top__btn" data-filter="all" type="button">
 					Все товары
-
 				</button>
+			</li>
+
+			<li class="top__category" data-filter=".fruits">
+				<button class="top__btn" type="button">
+					Фрукты</button>
 			</li>
 
 			<li class="top__category" data-filter=".vegetables">
@@ -463,11 +579,6 @@
 			<li class="top__category" data-filter=".drinks">
 				<button class="top__btn" type="button">
 					Напитки</button>
-			</li>
-
-			<li class="top__category" data-filter=".fruits">
-				<button class="top__btn" type="button">
-					Фрукты</button>
 			</li>
 
 			<li class="top__category" data-filter=".grocery">
@@ -975,10 +1086,40 @@
 	</div>
 </section>
 
-		
+		<section class="advertise">
+	<div class="container">
+
+
+		<h2 class="sr-only">Наши акции</h2>
+
+		<ul class="advertise__slides">
+			<li class="advertise__slide advertise__slide--light"
+				style="background-image: url('images/images/advertise/fruits1.jpg');">
+				<h3 class="advertise__name">Свежайшие фрукты</h3>
+				<p class="advertise__description advertise__description--light">Начни фруктовое лето
+					Всего От 99 ₽ </p>
+				<a class="advertise__link advertise__link--light" href="#">Перейти к покупкам</a>
+			</li>
+
+			<li class="advertise__slide" style="background-image: url('images/images/advertise/vegetables1.jpg');">
+				<h3 class="advertise__name">Сезонная распродажа</h3>
+				<p class="advertise__description advertise__description--short">Овощепад
+					ДО -50% </p>
+				<a class="advertise__link" href="#">Перейти к покупкам</a>
+			</li>
+
+			<li class="advertise__slide" style="background-image: url('images/images/advertise/grocery1.jpg');">
+				<h3 class="advertise__name">Ням-ням</h3>
+				<p class="advertise__description advertise__description--short">Свежий
+					хлебчик</p>
+				<a class="advertise__link" href="#">Перейти к покупкам</a>
+			</li>
+		</ul>
+	</div>
+</section>
 
 		<section class="top top--promotions">
-	<div class="container container--mobile" data-ref="container-2">
+	<div class="container container--mobile container--promotions" data-ref="container-2">
 		<h2 class="top__title title">Акции</h2>
 
 		<ul class="top__filter">

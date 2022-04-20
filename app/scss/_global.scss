@@ -58,11 +58,15 @@ body {
 		}
 
 		@include mq(tablet, max) {
-			max-width: 370px;
+			max-width: 375px;
 		}
 	}
 
-
+	&--promotions {
+		@include mq(tablet, max) {
+			padding: 0 37px;
+		}
+	}
 }
 
 .logo {
@@ -127,6 +131,7 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 1.3;
+	letter-spacing: 0.03em;
 	background-color: $green-900;
 	outline: transparent;
 	

@@ -238,7 +238,7 @@
 		loop: false,
 		slideClass: 'partners__item',
 		wrapperClass: 'partners__list',
-		slidesPerView: 8,
+		slidesPerView: 6,
 
 		// navigation: {
 		// 	nextEl: '.promo__pagination--next',
@@ -257,7 +257,7 @@
                 slidesPerView: 6
             },
             972: {
-                slidesPerView: 8
+                slidesPerView: 6
             },
 		},
 
@@ -279,6 +279,6 @@
 		}
 	}
 
-	// var mixerTop = mixitup(topContainer, config);
-	// var mixerPromotions = mixitup(promotionsContainer, config);
+	var mixerTop = mixitup(topContainer, config);
+	var mixerPromotions = mixitup(promotionsContainer, config);
 })();

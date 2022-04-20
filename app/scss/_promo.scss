@@ -25,7 +25,6 @@
 
 		@include mq(tablet, max) {
 			padding: 60px 0;
-			background-position: top left;
 			height: 320px;
 		}
   }
@@ -165,12 +164,14 @@
 
 	&__bullet {
 		display: block;
-		width: 10px;
-		height: 10px;
+		width: 12px;
+		height: 12px;
 		border-radius: 50%;
-		background-color: $silver-600;
+		border: 1px solid $silver-600;
+		background-color: $white;
 		
 		&--active {
+			border: 1px solid $green-900;
 			background-color: $green-900;
 		}
 	}

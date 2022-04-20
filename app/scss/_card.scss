@@ -23,13 +23,6 @@
 		}
 	}
 
-	&--small {
-		flex-direction: row;
-		padding: 12px 12px 12px 125px;
-		height: 125px;
-		@include backgroundimage("../images/goods/s-m/pineapple.jpg", 12px, no-repeat);
-	}
-
 	&:hover {
 		border-color: $green-900;
 	}
@@ -109,15 +102,6 @@
 		&--absent {
 			color: $silver-600;
 		}
-
-		&--small {
-			margin-top: auto;
-			margin-bottom: 5px;
-			font-weight: 600;
-			font-size: 10px;
-			line-height: 1;
-			color: $green-900;
-		}
 	}
 
 
@@ -193,12 +177,6 @@
 	&__prices {
 		margin-right: auto;
 
-		&--small{
-			display: flex;
-			align-items: flex-start;
-			align-items: baseline;
-		}
-
 		@include mq(tablet-2, max) {
 			order: 2;
 		}
@@ -207,13 +185,6 @@
 	&__price {
 		font-size: 14px;
 		line-height: 1;
-
-		&--small {
-			margin-right: 10px;
-			font-weight: 600;
-			font-size: 20px;
-			line-height: 100%;
-		}
 
 		&--mini {
 			font-size: 12px;
@@ -238,15 +209,6 @@
 		font-size: 14px;
 	}
 
-	&__rating {
-		height: 16px;
-		padding-right: 20px;
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 1;
-		@include backgroundimage("../images/favicons/global/star.svg", right 50%, no-repeat);
-	}
-
 	&__button {
 		padding: 8px;
 		width: 32px;
@@ -268,8 +230,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		top: 18px;
-		left: 18px;
+		top: 12px;
+		left: 12px;
 	}
 
 	&__promo {
@@ -281,6 +243,10 @@
 		line-height: 1;
 		color: $white;
 		text-transform: uppercase;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		&--hit {
 			background-color: $orange-900;
@@ -295,14 +261,11 @@
 		}
 	}
 
-	&__promo:last-child {
-		margin-bottom: 0;
-	}
 
 	&__favorite {
 		position: absolute;
-		top: 18px;
-		right: 18px;
+		top: 17px;
+		right: 12px;
 		outline: transparent;
 		width: 32px;
 		height: 29px;
@@ -311,6 +274,11 @@
 		border: 0;
 		background-color: transparent;
 		transition: opacity 0.3s ease, outline-color 0.3s ease;
+
+		@include mq(tablet, max) {
+			width: 24px;
+			height: 21px;
+		}
 
 		&:focus {
 			outline: 3px solid $green-200;
@@ -332,4 +300,12 @@
 			transition: fill 0.3s ease;
 		}
 	}
+
+	&__svg {
+		@include mq(tablet, max) {
+			width: 24px;
+			height: 21px;
+		}
+	}
+
 }

@@ -9,7 +9,7 @@
     background-color: $dark-800;
 
 		@include mq(tablet, max) {
-			padding: 5px 0;
+			padding: 10px 0;
 		}
   }
 
@@ -64,8 +64,8 @@
 			@include mq(tablet, max) {
 				padding: 0;
 				display: block;
-				width: 35px;
-				height: 35px;
+				width: 30px;
+				height: 30px;
 				background-position: center;
 			}
 		}
@@ -114,6 +114,7 @@
   }
 
   &__logo {
+		display: flex;
     margin-right: 25px;
   }
 

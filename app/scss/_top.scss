@@ -3,7 +3,7 @@
 	padding-bottom: 5px;
 
 	&--promotions {
-		padding-bottom: 60px;
+		padding-bottom: 70px;
 		background-color: $silver-100;
 
 		@include mq(tablet-2, max) {
@@ -19,7 +19,7 @@
 		margin-bottom: 30px;
 
 		@include mq(tablet-2, max) {
-			margin-bottom: 25px;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -32,6 +32,10 @@
 
 		@include mq(tablet-2, max) {
 			margin-bottom: 25px;
+		}
+
+		@include mq(tablet-2, max) {
+			row-gap: 10px;
 		}
 	}
 
@@ -104,6 +108,7 @@
 
 		@include mq(tablet, max) {
 			grid-template-columns: repeat(3, 1fr);
+			gap: 5px;
 		}
 
 		@include mq(phone, max) {
@@ -122,6 +127,8 @@
 
 			@include mq(tablet, max) {
 				grid-template-columns: 1fr;
+				gap: 15px;
+				margin-bottom: 20px;
 			}
 		}
 	}

@@ -10,6 +10,7 @@
 	transition: border-color 0.3s ease;
 
 	&__img {
+		margin-right: 10px;
 		width: 100px;
 		height: 100px;
 	}
@@ -113,8 +114,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		top: 18px;
-		left: 18px;
+		top: 12px;
+		left: 12px;
 	}
 
 	&__promo {
@@ -146,8 +147,8 @@
 
 	&__favorite {
 		position: absolute;
-		top: 18px;
-		right: 18px;
+		top: 17px;
+		right: 12px;
 		outline: transparent;
 
 		padding: 0; 
