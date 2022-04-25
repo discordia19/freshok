@@ -1,0 +1,144 @@
+.filters {
+	max-width: 300px;
+
+	&__filter {
+		width: 100%;
+		border: 1px solid $silver-600;
+		border-radius: 6px;
+		
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__name {
+		position: relative;
+		display: block;
+		width: 100%;
+		padding: 18px;
+		border: none;
+		border-bottom: 1px solid $silver-600;
+		text-align: left;
+		font-family: 'Ruda';
+		font-size: 1.5rem;
+		line-height: 1.2;
+		letter-spacing: 0.03em;
+		color: $dark-900;
+
+		background-color: transparent;
+
+		&::after {
+			@include pseudo();
+			right: 25px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			width: 20px;
+			height: 12px;
+
+			background-image: url("../images/favicons/filters/chevron.svg");
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			transition: transform 0.3s ease;
+		}
+
+		&--disabled {
+			border: none;
+
+			&::after {
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		padding: 18px;
+		max-height: 300px;
+		overflow-y: auto;
+
+		font-size: 1.125rem;
+		line-height: 1.3;
+		text-align: left;
+		color: $dark-500;
+
+		&--disabled {
+			display: none;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		&--slider {
+			justify-content: space-between;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__label {
+		font-size: 1rem;
+		line-height: 1.2rem;
+		letter-spacing: 0.03em;
+		color: $silver-600;
+		text-transform: lowercase;
+	}
+
+	&__price {
+		width: 80px;
+		height: 40px;
+		border: 1px solid $silver-600;
+		border-radius: 3px;
+		text-align: center;
+		font-size: 1rem;
+		line-height: 1;
+		letter-spacing: 0.03em;
+		background-color: $silver-100;
+	}
+}
+
+.noUi-target {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	height: 2px;
+}
+
+.noUi-base {
+	height: 2px;
+	background-color: $silver-300;
+}
+
+.noUi-connect {
+	height: 2px;
+	background-color: $green-900;
+}
+
+.noUi-horizontal .noUi-handle {
+	top: -8px;
+	right: -10px;
+	max-width: 88%;
+	margin: 0;
+	padding: 0;
+	width: 18px;
+	height: 18px;
+	border: none;
+	border-radius: 50%;
+	background-color: $green-900;
+	box-shadow: none;
+}
+
+.noUi-handle {
+	&::before {
+		display: none;
+	}
+
+	&::after {
+		display: none;
+	}
+}

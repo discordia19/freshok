@@ -59,6 +59,10 @@ export const styles = () => {
 		}))
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.stream());
+
+				// .pipe(gulp.dest('app/css/style.min.css'))
+		// .src('app/css', 'node_modules/nouislider/dist/nouislider.css')
+		// .pipe(concat('style.min.css'))
 };
 
 // Scripts
@@ -66,6 +70,7 @@ export const styles = () => {
 export const scripts = () => {
 	return gulp.src([
 		'node_modules/swiper/swiper-bundle.min.js',
+		'node_modules/nouislider/dist/nouislider.min.js',
 		'node_modules/mixitup/dist/mixitup.min.js',
 		'app/js/main.js'
 	])

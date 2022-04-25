@@ -193,3 +193,52 @@ body {
 .mixitup-control-active {
 	box-shadow: 0px 3px 0px 0px $green-200;
 }
+
+// Checkbox
+
+
+.checkbox {
+	padding-left: 30px;
+	cursor: pointer;
+
+	&__input {
+		@extend .sr-only;
+	}
+
+	&__box {
+		position: absolute;
+		margin-left: -30px;
+		width: 25px;
+		height: 25px;
+		border: 1px solid $silver-600;
+		border-radius: 3px;
+		background-color: $silver-100;
+	}
+}
+
+.checkbox__input:checked + .checkbox__box {
+	background-image: url("../images/stack/sprite.svg#global--checkbox");
+	background-position: center;
+	background-repeat: no-repeat;
+	border-color: $dark-500;
+}
+
+.checkbox__input:focus + .checkbox__box {
+	border-color: $dark-500;
+	outline: 3px solid $green-200;
+}
+
+.checkbox__input:checked:focus + .checkbox__box {
+	border-color: $dark-500;
+	outline: 3px solid $green-200;
+}
+
+.checkbox__input:disabled + .checkbox__box {
+	background-color: $silver-300;
+}
+
+.checkbox__input:disabled:checked + .checkbox__box {
+	background-image: url("../images/stack/sprite.svg#global--checkbox");
+	background-position: center;
+	background-repeat: no-repeat;
+}

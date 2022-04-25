@@ -49,6 +49,12 @@ select {
 	outline: transparent;
 }
 
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
 a {
 	cursor: pointer;
 	color: inherit;

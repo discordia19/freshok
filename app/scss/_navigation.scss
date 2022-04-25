@@ -1,0 +1,28 @@
+.navigation {
+	padding: 25px 0;
+	font-size: 0.875rem;
+	line-height: 1.2;
+	letter-spacing: 0.03em;
+	color: $dark-500;
+	background-color: $silver-100;
+
+	&__path {
+		display: flex;
+		justify-content: flex-start;
+		gap: 5px;
+	}
+
+	&__dir {
+		padding-left: 10px;
+		background-image: url("../images/favicons/navigation/chevron.svg");
+		background-repeat: no-repeat;
+		background-position: 0 center;
+
+		&--root {
+			padding-left: 0%;
+			background-image: none;
+		}
+	}
+}
+
+

@@ -1,0 +1,17 @@
+.catalogue {
+	padding: 50px 0 70px; 
+
+	&__title {
+		margin-bottom: 50px;
+		text-align: left;
+
+		@include mq(tablet, max) {
+			font-size: 30px;
+		}
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 300px auto;
+	}
+}

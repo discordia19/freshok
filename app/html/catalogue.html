@@ -1,0 +1,26 @@
+@include("components/_head.html", {
+	"title" : "ФреШок | Каталог товаров",
+	"h1" : "Каталог товаров"
+})
+
+	@include("components/_header.html")
+
+	@include("components/_menu.html")
+
+	@include("components/_cart.html")
+
+	<main class="main">
+		@include("components/_navigation.html", {
+			"dir" : "Каталог товаров",
+			"dir_link" : "#"
+		})
+		@include("components/_catalogue.html")
+		@include("components/_advantages.html")
+	</main>
+	
+	@include("components/_footer.html")
+
+	<script src="js/catalogue.js"></script>
+@include("components/_scripts.html")
+	
+

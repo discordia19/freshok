@@ -1,0 +1,142 @@
+<section class="catalogue">
+	<div class="container">
+		<h2 class="catalogue__title title">Каталог товаров</h2>
+
+		<div class="catalogue__inner">
+
+			<aside class="filters">
+				<h3 class="sr-only">Фильтры товаров</h3>
+
+				<ul class="filters__list">
+					<li class="filters__filter">
+						<button class="filters__name" data-action="toggleFilterItems">
+							Категории
+						</button>
+						<ul class="filters__items">
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Овощи и фрукты
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Овощи и фрукты
+								</a>
+							</li>
+
+						</ul>
+					</li>
+
+					<li class="filters__filter">
+						
+
+						<button class="filters__name" data-action="toggleFilterItems">
+							Предложения
+						</button>
+						<fieldset class="filters__fieldset">
+							<legend class="sr-only">Фильтр предложений</legend>
+
+							<ul class="filters__items">
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="sale" name="sale" checked>
+										<div class="checkbox__box"></div>
+
+										Со скидкой
+									</label>
+									
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="new" name="new">
+										<div class="checkbox__box"></div>
+
+										Со скидкой
+									</label>
+									
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="hit" name="hit">
+										<div class="checkbox__box"></div>
+
+										Со скидкой
+									</label>
+									
+								</li>
+							</ul>
+						</fieldset>
+					</li>
+
+					<li class="filters__filter">
+						
+						
+						<button class="filters__name" data-action="toggleFilterItems">
+							Бренд
+						</button>
+
+						<fieldset class="filters__fieldset">
+							<legend class="sr-only">Фильтр брендов</legend>
+
+							<ul class="filters__items">
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="CocaCola" name="CocaCola" checked>
+										<div class="checkbox__box"></div>
+
+										CocaCola
+									</label>
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
+										<div class="checkbox__box"></div>
+
+										Pepsi
+									</label>
+								</li>
+							</ul>
+						</fieldset>
+					</li>
+
+					<li class="filters__filter">
+						<button class="filters__name" data-action="toggleFilterItems">
+							Цена
+						</button>
+						<fieldset class="filters__items">
+
+							<legend class="sr-only">Фильтр цены</legend>
+
+							<div class="filters__item filters__item--slider">
+								<label class="filters__label">
+									От
+									<input class="filters__price filters__price--min" type="number" id="minPrice" name="minPrice" value="100">
+									₽
+	
+								</label>
+	
+								<label class="filters__label" for="maxPrice">
+									До
+									<input class="filters__price filters__price--max" type="number" name="maxPrice" value="1000">
+									₽
+								</label>
+							</div>
+
+							<div class="filters__slider filters__item">
+								<span class="sr-only">Слайдер цен</span>
+							</div>
+						</fieldset>
+					</li>
+				</ul>
+
+
+			</aside>
+
+		</div>
+
+	</div>
+</section>
