@@ -67,6 +67,16 @@ body {
 			padding: 0 37px;
 		}
 	}
+
+	&--catalogue {
+		@include mq(tablet-3, max) {
+			max-width: 1000px;
+		}
+
+		@include mq(phone, max) {
+			max-width: 430px;
+		}
+	}
 }
 
 .logo {
@@ -169,6 +179,11 @@ body {
 	
 	&--transparent:active {
 		color: rgb($green-900, 0.8);
+	}
+
+	&--catalogue {
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 

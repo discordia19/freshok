@@ -107,6 +107,27 @@ export const svg = () => {
 		.pipe(gulp.dest('app/images/'));
 }
 
+export const catalogueSvg = () => {
+	return gulp.src('app/images/favicons/catalogue/*svg')
+		.pipe(cheerio({
+			run: ($) => {
+			},
+			parserOptions: { xmlMode: true },
+		})
+		)
+		.pipe(
+			svgSprite({
+				mode: {
+					stack: {
+						sprite: 'catalogue.svg',
+						example: true
+					}
+				}
+			})
+
+		)
+		.pipe(gulp.dest('app/images/'));
+}
 // Images 
 
 export const images = () => {

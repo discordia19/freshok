@@ -1,15 +1,23 @@
 <section class="catalogue">
-	<div class="container">
+	<div class="container container--catalogue">
 		<h2 class="catalogue__title title">Каталог товаров</h2>
 
-		<div class="catalogue__inner">
+		<div class="catalogue__grid">
 
-			<aside class="filters">
+			<aside class="filters filters--disable" data-action="toggleFilter"> 
 				<h3 class="sr-only">Фильтры товаров</h3>
+				<button class="filters__close" data-action="toggleFilter">
+					<span class="sr-only">Закрыть фильтры</span>
+					<svg class="" width="18" height="18" data-action="toggleFilter">
+						<use class="" xlink:href="images/stack/sprite.svg#cart--close-m"
+							aria-label="Закрыть фильтры" data-action="toggleFilter" fill="FFFFFF">
+						</use>
+					</svg>
+				</button>
 
 				<ul class="filters__list">
 					<li class="filters__filter">
-						<button class="filters__name" data-action="toggleFilterItems">
+						<button class="filters__name" data-action="toggleFilterItems" type="button">
 							Категории
 						</button>
 						<ul class="filters__items">
@@ -21,7 +29,43 @@
 
 							<li class="filters__item">
 								<a class="filters__link" href="#">
-									Овощи и фрукты
+									Бакалея
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Молочные продукты
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Хлеб
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Мясо
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Колбаса
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Рыба
+								</a>
+							</li>
+
+							<li class="filters__item">
+								<a class="filters__link" href="#">
+									Алкоголь
 								</a>
 							</li>
 
@@ -29,9 +73,9 @@
 					</li>
 
 					<li class="filters__filter">
-						
 
-						<button class="filters__name" data-action="toggleFilterItems">
+
+						<button class="filters__name" data-action="toggleFilterItems" type="button">
 							Предложения
 						</button>
 						<fieldset class="filters__fieldset">
@@ -45,7 +89,7 @@
 
 										Со скидкой
 									</label>
-									
+
 								</li>
 
 								<li class="filters__item">
@@ -53,9 +97,9 @@
 										<input class="checkbox__input" type="checkbox" id="new" name="new">
 										<div class="checkbox__box"></div>
 
-										Со скидкой
+										Новинка
 									</label>
-									
+
 								</li>
 
 								<li class="filters__item">
@@ -63,17 +107,17 @@
 										<input class="checkbox__input" type="checkbox" id="hit" name="hit">
 										<div class="checkbox__box"></div>
 
-										Со скидкой
+										Хит
 									</label>
-									
+
 								</li>
 							</ul>
 						</fieldset>
 					</li>
 
 					<li class="filters__filter">
-						
-						
+
+
 						<button class="filters__name" data-action="toggleFilterItems">
 							Бренд
 						</button>
@@ -99,6 +143,42 @@
 										Pepsi
 									</label>
 								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
+										<div class="checkbox__box"></div>
+
+										Fanta
+									</label>
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
+										<div class="checkbox__box"></div>
+
+										RedBull
+									</label>
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
+										<div class="checkbox__box"></div>
+
+										Dr Pepper
+									</label>
+								</li>
+
+								<li class="filters__item">
+									<label class="checkbox">
+										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
+										<div class="checkbox__box"></div>
+
+										Fanta
+									</label>
+								</li>
 							</ul>
 						</fieldset>
 					</li>
@@ -114,11 +194,12 @@
 							<div class="filters__item filters__item--slider">
 								<label class="filters__label">
 									От
-									<input class="filters__price filters__price--min" type="number" id="minPrice" name="minPrice" value="100">
+									<input class="filters__price filters__price--min" type="number" id="minPrice" name="minPrice"
+										value="100">
 									₽
-	
+
 								</label>
-	
+
 								<label class="filters__label" for="maxPrice">
 									До
 									<input class="filters__price filters__price--max" type="number" name="maxPrice" value="1000">
@@ -132,10 +213,893 @@
 						</fieldset>
 					</li>
 				</ul>
-
-
 			</aside>
 
+			<section class="catalogue__inner">
+				<form class="catalogue__filter" name="viewfilter">
+					<div class="catalogue__input-container">
+						<select class="catalogue__input">
+							<option value="name">По названию</option>
+							<option value="cheap">Сначала дешевле</option>
+							<option value="expensive">Сначала дороже</option>
+						</select>
+					</div>
+
+					<div class="catalogue__input-container">
+						<select class="catalogue__input catalogue__input--small">
+							<option value="12">по 12</option>
+							<option value="18">по 18</option>
+							<option value="30">по 30</option>
+						</select>
+					</div>
+
+					<button class="catalogue__filter-btn catalogue__filter-btn--openfilters" type="button" data-action="toggleFilter">
+						<svg class="catalogue__svg" width="47" height="47" data-action="toggleFilter">
+							<use class="catalogue__use" xlink:href="images/stack/catalogue.svg#btn-open-filters"
+								aria-label="Открыть фильтры" data-action="toggleFilter">
+							</use>
+						</svg>
+					</button>
+
+					<button class="catalogue__filter-btn catalogue__filter-btn--view" type="button">
+						<svg class="catalogue__svg" width="47" height="47">
+							<use class="catalogue__use" xlink:href="images/stack/catalogue.svg#btn-view-list--disabled" role="img"
+								aria-label="Вид отображения - список">
+							</use>
+
+							<use class="catalogue__use catalogue__use--disabled" xlink:href="images/stack/catalogue.svg#btn-view-list"
+								role="img" aria-label="Вид отображения - список">
+							</use>
+						</svg>
+					</button>
+
+					<button class="catalogue__filter-btn catalogue__filter-btn--view" type="button">
+						<svg class="catalogue__svg" width="47" height="47">
+							<use class="catalogue__use" xlink:href="images/stack/catalogue.svg#btn-view-grid"
+								aria-label="Вид отображения - ячейки">
+							</use>
+
+							<use class="catalogue__use catalogue__use--disabled" xlink:href="images/stack/catalogue.svg#btn-view-grid--disabled"
+								aria-label="Вид отображения - ячейки">
+							</use>
+						</svg>
+					</button>
+				</form>
+
+				<ul class="catalogue__list">
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--new">Новинка</li>
+								<li class="card__promo card__promo--sale">-50%</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Ананас
+								</span>
+								<img class="card__img" src="images/goods/m/lifeline.jpg" alt="lifeline" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Напиток LIFELINE Intellectual со вкусом арбуза и яблока Фонте Аква 0.5 л</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"><span>149 ₽</span></li>
+										<li class="card__price">99 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-1">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-1" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="submit">
+										<span class="sr-only">
+											В корзину
+										</span>
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">3.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Лимон, 1кг
+								</span>
+								<img class="card__img" src="images/goods/m/lemon.jpg" alt="" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Лимон, 1кг</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">199 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-2">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-2" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+		
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--hit">Хит</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Питахайя красная с белой мякотью, 1шт
+								</span>
+								<img class="card__img" src="images/goods/m/dragonfruit.jpg" alt="Питахайя красная" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Питахайя красная с белой мякотью, 1шт</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">1019 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-3">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-3" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+									
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--hit">хит</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Морковь молодая с бабушкиной грядки
+								</span>
+								<img class="card__img" src="images/goods/m/carrot.png" alt="Морковь молодая" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Морковь молодая с бабушкиной грядки, 1кг</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">49 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-5">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-5" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state card__state--absent">Нет наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--sale">-30%</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+							
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+									безалкогольный
+								</span>
+								<img class="card__img" src="images/goods/m/juice.jpg" alt="Напиток сокосодержащий" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный
+										апельсин безалкогольн...</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"><span>299 ₽</span></li>
+										<li class="card__price">199 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-6">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-6" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+		
+					<li class="catalogue__item mix drinks">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--new">Новинка</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Кофе с коноплей органический Caffé Salomoni 250г
+								</span>
+								<img class="card__img" src="images/goods/m/coffee.jpg" alt="Кофе с коноплей" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Кофе с коноплей органический Caffé Salomoni 250г							
+									</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">877 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-7">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-7" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state card__state--ends">Заканчивается</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+		
+					<li class="catalogue__item mix vegetables">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--new">Новинка</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Перец оранжевый
+								</span>
+								<img class="card__img" src="images/goods/m/paprik.jpg" alt="Перец оранжевый" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Перец оранжевый, 1кг</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">349 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-8">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-8" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state card__state--ends">Заканчивается</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+		
+					<li class="catalogue__item  mix grocery">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт
+								</span>
+								<img class="card__img" src="images/goods/m/ketchup.jpg" alt="Кетчуп томатный" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">600 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-4">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-4" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--new">Новинка</li>
+								<li class="card__promo card__promo--sale">-50%</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Ананас
+								</span>
+								<img class="card__img" src="images/goods/m/pineapple.jpg" alt="" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Ананас, 1кг</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"><span>1999 ₽</span></li>
+										<li class="card__price">999 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-1">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-1" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="submit">
+										<span class="sr-only">
+											В корзину
+										</span>
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--hit">хит</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Морковь молодая с бабушкиной грядки
+								</span>
+								<img class="card__img" src="images/goods/m/carrot.png" alt="Морковь молодая" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Морковь молодая с бабушкиной грядки, 1кг</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">49 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-5">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-5" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state card__state--ends">Заканчивается</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+
+					<li class="catalogue__item">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--sale">-30%</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+							
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+									безалкогольный
+								</span>
+								<img class="card__img" src="images/goods/m/juice.jpg" alt="Напиток сокосодержащий" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный
+										апельсин безалкогольн...</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"><span>299 ₽</span></li>
+										<li class="card__price">199 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-6">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-6" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state">В наличии</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+		
+					<li class="catalogue__item mix drinks">
+						<article class="catalogue__card card">
+							<ul class="card__promos">
+								<li class="card__promo card__promo--new">Новинка</li>
+							</ul>
+		
+							<button class="card__favorite" type="button" data-action="toggleFavorite">
+								<span class="sr-only">
+									В избранное
+								</span>
+								<svg class="card__svg" width="32" height="29" viewBox="0 0 32 29" fill="#C1C1C1"
+									xmlns="http://www.w3.org/2000/svg" data-action="toggleFavorite">
+									<use xlink:href="images/stack/sprite.svg#global--heart"></use>
+								</svg>
+							</button>
+		
+							<a class="card__item" href="#">
+								<span class="sr-only">
+									Кофе с коноплей органический Caffé Salomoni 250г
+								</span>
+								<img class="card__img" src="images/goods/m/coffee.jpg" alt="Кофе с коноплей" width="300" height="225">
+							</a>
+		
+							<div class="card__inner">
+								<h3 class="card__name">
+									<a class="card__name-link" href="#">Кофе с коноплей органический Caffé Salomoni 250г							
+									</a>
+								</h3>
+		
+								<form class="card__payment">
+									<ul class="card__prices">
+										<li class="card__price card__price--previous"></li>
+										<li class="card__price">877 ₽</li>
+									</ul>
+		
+									<div class="card__control">
+										<label class="sr-only" for="good-7">Количество товаров для добавления в корзину</label>
+		
+										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
+											<span class="sr-only">Убрать товар</span>
+										</button>
+										
+										<input class="card__input" name="good-count" type="text" id="good-7" value="0">
+										
+										<button class="card__btn card__btn--add" data-action="add" type="button">
+											<span class="sr-only">Добавить товар</span>
+										</button>
+									</div>
+		
+									<button class="card__button button" type="button">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+											<use xlink:href="images/stack/sprite.svg#global--cart-s"></use>
+										</svg>
+										<span class="sr-only">
+											В корзину
+										</span>
+									</button>
+								</form>
+
+								<div class="card__add">
+									<div class="card__state card__state--ends">Заканчивается</div>
+									<div class="card__rating">4.5</div>
+								</div>
+							</div>
+						</article>
+					</li>
+				</ul>
+
+				<nav class="catalogue__nav">
+					<button class="button button--catalogue" type="button">Показать еще</button>
+					<ul class="catalogue__pagination">
+						<li class="catalogue__page">
+							<button class="catalogue__page-btn" type="button">
+								<svg class="catalogue__page-svg catalogue__page-svg--prev" width="18" height="11">
+									<use class="catalogue__page-use" xlink:href="images/stack/catalogue.svg#chevron--small"
+										aria-label="Предыдущая">
+									</use>
+								</svg>
+							</button>
+
+							
+							<button class="catalogue__page-btn catalogue__page-btn--selected" type="button">1</button>
+							
+							<button class="catalogue__page-btn catalogue__page-btn--notrequired" type="button">2</button>
+
+							<button class="catalogue__page-btn" type="button">...</button>
+
+							<button class="catalogue__page-btn" type="button">9</button>
+
+							<button class="catalogue__page-btn catalogue__page-btn--notrequired" type="button">10</button>
+
+							<button class="catalogue__page-btn" type="button">
+								<svg class="catalogue__page-svg catalogue__page-svg--next" width="18" height="11">
+									<use class="catalogue__page-use" xlink:href="images/stack/catalogue.svg#chevron--small"
+										aria-label="Следующая">
+									</use>
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</section>
 		</div>
 
 	</div>

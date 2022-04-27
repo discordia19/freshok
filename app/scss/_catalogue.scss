@@ -1,6 +1,10 @@
 .catalogue {
 	padding: 50px 0 70px; 
 
+	@include mq(tablet-2, max) {
+		padding: 30px 0 35px; 
+	}
+
 	&__title {
 		margin-bottom: 50px;
 		text-align: left;
@@ -8,10 +12,203 @@
 		@include mq(tablet, max) {
 			font-size: 30px;
 		}
+
+		@include mq(tablet-2, max) {
+			margin-bottom: 30px;
+		}
 	}
 
-	&__inner {
+	&__grid {
+		position: relative;
 		display: grid;
 		grid-template-columns: 300px auto;
+		gap: 30px;
+
+		@include mq(tablet-3, max) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__filter {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-bottom: 50px;
+
+		@include mq(tablet-3, max) {
+			margin-bottom: 30px;
+		}
+
+		@include mq(tablet, max) {
+			justify-content: flex-start;
+		}
+	}
+
+	&__input {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 150px;
+		padding: 15px 25px 15px 15px;
+		height: 47px;
+		font-size: 0.875rem;
+		line-height: 1.2;
+		border-radius: 3px;
+		border: 1px solid $silver-600;
+		background-color: $white;
+
+		cursor: pointer;
+
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		@include mq(phone, max) {
+			font-size: 0.66rem;
+			width: 114px;
+		}
+
+		&--small {
+			width: 100px;
+
+			@include mq(phone, max) {
+				width: 70px;
+			}
+		}
+	}
+
+	&__input-container {
+		position: relative;
+		margin-right: 15px;
+		max-height: 47px;
+
+		&::after {
+			@include pseudo();
+			top: 50%;
+			right: 15px;
+			transform: translateY(-50%);
+
+			width: 18px;
+			height: 10px;
+				
+			background-image: url("../images/stack/catalogue.svg#chevron--small");
+			background-repeat: no-repeat;
+			background-position: center;
+
+			@include mq(phone, max) {
+				right: 5px;
+			}
+		}
+	}
+
+	&__filter-btn {
+		position: relative;
+		display: flex;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+
+		&--openfilters {
+			display: none;
+
+			@include mq(tablet-3, max) {
+				display: flex;
+			}
+
+			@include mq(tablet, max) {
+				order: -1;
+			}
+		}
+
+		&--view {
+			@include mq(tablet, max) {
+				display: none;
+			}
+		}
+	}
+
+	&__use--disabled {
+		display: none;
+	}
+
+	&__filter-btn:not(:last-child) {
+		margin-right: 15px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		margin-bottom: 50px;
+
+		@include mq(tablet-2, max) {
+			gap: 15px;
+		}
+
+		@include mq(tablet, max) {
+			gap: 5px;
+		}
+
+		@include mq(phone, max) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&--horizontal {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+
+		@include mq(phone, max) {
+			flex-direction: column;
+			align-items: center;
+			gap: 25px;
+		}
+	}
+
+	&__page-btn {
+		padding: 15px;
+		width: 48px;
+		border: none;
+		text-align: center;
+		line-height: 1;
+		font-size: 1.125rem;
+		border-radius: 3px;
+		background-color: $silver-100;
+
+		&:hover {
+			outline: 1px solid $silver-600;
+		}
+
+		&:focus {
+			outline: 3px solid $green-200;
+		}
+
+		&:active {
+			box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		&--selected {
+			outline: 1px solid $black;
+		}
+
+		&--notrequired {
+			@include mq(tablet, max) {
+				display: none;
+			}
+		}
+	}
+
+	&__page-svg {
+		&--prev {
+			transform: rotate(90deg);
+		}
+
+		&--next {
+			transform: rotate(270deg);
+		}
 	}
 }

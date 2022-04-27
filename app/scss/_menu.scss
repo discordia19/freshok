@@ -12,11 +12,11 @@
 	overflow: auto;
 	box-shadow: 10px 0 0 10000px rgba($black, 0.1);
 
-	&::after {
+	&::before {
 		@include pseudo(fixed, block, '');
 		top: 0; 
 		bottom: 0;
-		left: 0; 
+		left: 300px; 
 		right: 0;
 		z-index: -1001;
 	}

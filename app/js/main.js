@@ -121,10 +121,14 @@
 	// Catalog
 
 	document.addEventListener('click', (event) => {
+		const inCatalog = (target) => {
+			return !target.className.includes('catalogue') && target.className.includes('catalog');
+		}
+
 		let catalog = document.querySelector('.catalog__menu');
 
 		if (event.target.dataset.actionId === 'toggleCatalog' ||
-			!catalog.classList.contains('catalog__menu--disable') && !event.target.className.includes('catalog')) {
+			!catalog.classList.contains('catalog__menu--disable') && !inCatalog(event.target)) {
 
 			let button = document.querySelector('.catalog__button');
 
@@ -277,6 +281,47 @@
 
 	if (location.pathname.includes('/catalogue.html')) {
 
+		// Filter menu
+
+		class Filter {
+			constructor(elem, openBtn) {
+				this._elem = elem;
+				this._open = openBtn;
+				elem.onclick = this.onClick.bind(this);
+				openBtn.onclick = this.onButtonClick.bind(this);
+			}
+	
+			toggleFilter() {
+				console.log('inToggle')
+				this._elem.classList.toggle('filters--disable');
+				document.body.classList.toggle('scroll-off');
+			}
+	
+			onButtonClick(event) {
+				console.log('hello')
+				let action = event.target.dataset.action;
+				if (action) {
+					this[action](event);
+				}
+			}
+
+			onClick(event) {
+				if (document.documentElement.clientWidth < 1170) {
+					console.log('work')
+					let action = event.target.dataset.action;
+					if (action) {
+						this[action](event);
+					}
+				}
+			}
+		}
+
+		const filterElem = document.querySelector('.filters');
+		const filterBtn = document.querySelector('.catalogue__filter-btn--openfilters');
+
+		const filter = new Filter(filterElem, filterBtn);
+
+
 		// Slider filter
 
 		const MIN_PRICE = 0;
@@ -325,9 +370,8 @@
 			slider.noUiSlider.set([null, this.value]);
 		});
 
+		// Filter items (categories, price, brand)
 
-		// Filter items
-		
 		class FilterItems {
 			constructor(element, disableButton) {
 				this.element = element;
@@ -361,5 +405,81 @@
 
 		filterItems.forEach(([elem, toggleBtn]) => (new FilterItems(elem, toggleBtn)));
 	}
+
+	// Catalogue sort buttons
+
+	class SortButton {
+		constructor(gridButton, listButton) {
+			this.STATE = 'grid';
+			this.gridButton = gridButton;
+			this.gridButtonSvgUses = Array.from(gridButton.querySelectorAll('.catalogue__use'));
+			console.log(this.gridButtonSvgUses[0]);
+
+			this.listButton = listButton;
+			this.listButtonSvgUses = Array.from(listButton.querySelectorAll('.catalogue__use'));
+
+			console.log(gridButton)
+			console.log(listButton)
+
+			gridButton.onclick = this.disableList.bind(this);
+			listButton.onclick = this.enableList.bind(this);
+		}
+
+		disableList() {
+			if (this.STATE !== 'grid') {
+				this.gridButtonSvgUses.forEach((use) => {
+					use.classList.toggle('catalogue__use--disabled');
+				});
+				this.listButtonSvgUses.forEach((use) => {
+					use.classList.toggle('catalogue__use--disabled');
+				});
+
+				const horizontalCards = Array.from(document.querySelectorAll('.card--horizontal'));
+
+				horizontalCards.forEach((elem) => (elem.classList.remove('card--horizontal')));
+
+				const horizontalGrid = Array.from(document.querySelectorAll('.catalogue__list--horizontal'));
+
+				horizontalGrid.forEach((elem) => (elem.classList.remove('catalogue__list--horizontal')));
+
+				this.STATE = 'grid';
+			}
+		}
+
+		enableList() {
+			if (this.STATE !== 'list') {
+				this.gridButtonSvgUses.forEach((use) => {
+					use.classList.toggle('catalogue__use--disabled');
+				});
+				this.listButtonSvgUses.forEach((use) => {
+					use.classList.toggle('catalogue__use--disabled');
+				});
+
+				const horizontalCards = Array.from(document.querySelectorAll('.card'));
+
+				horizontalCards.forEach((elem) => (elem.classList.add('card--horizontal')));
+
+				const horizontalGrid = Array.from(document.querySelectorAll('.catalogue__list'));
+
+				horizontalGrid.forEach((elem) => (elem.classList.add('catalogue__list--horizontal')));
+
+				this.STATE = 'list';
+			}
+		}
+	}
+
+	const [listBtn, gridBtn] = document.querySelectorAll('.catalogue__filter-btn--view');
+	const sortButtons = new SortButton(gridBtn, listBtn);
+
+	// Filter view control
+
+	window.addEventListener('resize', () => {
+		console.log('resize');
+
+		if (document.documentElement.clientWidth < 800) {
+			sortButtons.disableList();
+		}
+	});
+
 
 })();

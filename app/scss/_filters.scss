@@ -1,5 +1,70 @@
 .filters {
+	display: flex;
+	flex-direction: column;
 	max-width: 300px;
+
+		@include mq(tablet-3, max) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 3;
+			width: 320px;
+			height: 100vh;
+			padding: 30px 20px 10px 0;
+			background-color: $white;
+			display: flex;
+			overflow-y: auto;
+			box-shadow: 10px 0 0 10000px rgba($black, 0.1);
+
+			&::before {
+				@include pseudo(fixed, block, '');
+				z-index: -10;
+				top: 0; 
+				bottom: 0;
+				left: 0; 
+				right: 0;
+			}
+		}
+
+	&--disable {
+		@include mq(tablet-3, max) {
+			display: none;
+		}
+	}
+
+	&__close {
+		display: none;
+
+		@include mq(tablet-3, max) {
+			display: flex;
+			align-self: flex-end;
+			align-items: center;
+			justify-content: center;
+			padding: 11px;
+			border: 0;
+			margin-bottom: 30px;
+			border-radius: 3px;
+			background-color: transparent;
+			outline-color: transparent;
+			transition: outline-color 0.3s ease, background-color 0.3s ease;
+			
+			&:focus {
+				outline: 3px solid $green-200;
+			}
+
+			&:hover {
+				background-color: $green-200;
+
+				svg {
+					fill: $green-900;
+				}
+			}
+
+			&:active {
+				background-color: $silver-600;
+			}
+		}
+	}
 
 	&__filter {
 		width: 100%;

@@ -13,10 +13,43 @@
 		padding-top: 55px;
 	}
 
+	&--horizontal {
+		padding: 12px 0;
+		display: grid;
+		grid-template-columns: 200px auto;	
+
+		.card__favorite {
+			z-index: 1;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.card__name-link {
+			display: block;
+			// max-width: 180px;
+			max-width: calc(100% - 32px);
+		}
+
+		.card__inner {
+			padding: 18px 18px 0 18px;
+		}
+
+		.card__promos {
+			top: 7px;
+			left: 7px;
+		}
+
+		.card__control {
+			display: none;
+		}
+	}
+
 	&__img {
+		position: relative;
 		object-fit: contain;
 		width: 100%;
 		height: auto;
+		border-radius: 6px;
 
 		@include mq(phone, max) {
 			height: 125px;
@@ -29,27 +62,24 @@
 
 	&__item {
 		position: relative;
-	}
 
-	&__image {
-		position: relative;
-		display: flex;
-		align-self: center;
-		justify-content: center;
-		width: 100%;
-		height: 225px;
-		margin-bottom: 10px;
-		// background-position: center;
-		// background-repeat: no-repeat;
-		// background-image: url("../images/goods/m/pineapple.jpg" );
-		transition: box-shadow 0.3s ease;
-
-		&:hover {
-			box-shadow: inset 0 0 0 1000px rgba($black, 0.1);
-		}
-	
 		&::after {
 			@include pseudo();
+			// z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: background-color 0.3s ease;
+		}
+
+		&:hover::after {
+			background-color: rgba($black, 0.1);
+		}
+
+		&::before {
+			@include pseudo();
+			z-index: 1;
 			border-radius: 50%;
 			top: 50%;
 			left: 50%;
@@ -62,15 +92,15 @@
 			transition: transform 0.3s ease;
 		}
 	
-		&:hover::after {
+		&:hover::before {
 			transform: translateX(-50%) translateY(-50%) scale(1);
 			background-image: url(../images/favicons/global/search-s.svg);
 			background-color: $white;
 		}
 	}
 
-
 	&__inner {
+		position: relative;
 		display: flex;
 		flex-grow: 1;
 		flex-direction: column;
@@ -308,4 +338,44 @@
 		}
 	}
 
+	&__add {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		top: 0;
+		left: 18px;
+		right: 18px;
+
+		@include mq(tablet-3, max) {
+			left: 12px;
+			right: 12px;
+		}
+	}
+
+	&__state {
+		font-size: 0.625rem;
+		font-weight: 600;
+		line-height: 1;
+		text-transform: uppercase;
+		color: $green-900;
+		letter-spacing: 0.03em;
+
+		&--absent {
+			color: $silver-600;
+		}
+
+		&--ends {
+			color: $red-900;
+		}
+	}
+
+	&__rating {
+		height: 16px;
+		padding-right: 20px;
+		font-weight: 700;
+		font-size: 0.875rem;
+		line-height: 1;
+		@include backgroundimage("../images/favicons/global/star.svg", right 50%, no-repeat);
+	}
 }
