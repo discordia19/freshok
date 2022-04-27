@@ -147,6 +147,7 @@
 
 		@include mq(tablet, max) {
 			gap: 5px;
+			margin-bottom: 25px;
 		}
 
 		@include mq(phone, max) {

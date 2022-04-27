@@ -38,7 +38,7 @@ export const clearDist = () => {
 // HTML
 
 export const htmlInclude = () => {
-	return gulp.src('app/html/**/*.html')
+	return gulp.src('app/html/*.html')
 		.pipe(fileInclude({
 			prefix: '@',
 			basepath: '@file'

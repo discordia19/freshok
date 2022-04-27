@@ -24,7 +24,88 @@
 	</div>
 
 	<div class="menu__bottom">
-		<a class="menu__catalog" href="#">Каталог товаров</a>
+		<button class="menu__catalog-btn" type="button" data-action="toggleCatalog">
+			<svg class="menu__catalog-svg" width="26" height="20" data-action="toggleCatalog">
+				<use xlink:href="images/stack/sprite.svg#menu--nav_icon" data-action="toggleCatalog"></use>
+			</svg>
+
+			<span class="menu__catalog-text" data-action="toggleCatalog">Каталог товаров</span>
+		</button>
+
+		<ul class="menu__catalog menu__catalog--disabled">
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Овощи и фрукты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Бакалея
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Молочные продукты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Хлеб
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Мясо
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Колбаса
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Рыба
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Алкоголь
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Напитки
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Торты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Мясо
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Чай, кофе
+				</a>
+			</li>
+
+		</ul>
 
 		<address class="menu__address">
 			<a class="menu__contact menu__contact--tel" href="tel:+7907288365">
@@ -52,8 +133,8 @@
 						<span class="sr-only">
 							Youtube
 						</span>
-						<svg width="32" height="28" viewBox="0 0 32 28" fill="white" xmlns="http://www.w3.org/2000/svg">
-							<use xlink:href="images/stack/sprite.svg#footer--favicons--youtube"></use>
+						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<use xlink:href="images/stack/catalogue.svg#youtube"></use>
 						</svg>
 					</a>
 				</li>

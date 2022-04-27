@@ -85,7 +85,7 @@
 								<li class="filters__item">
 									<label class="checkbox">
 										<input class="checkbox__input" type="checkbox" id="sale" name="sale" checked>
-										<div class="checkbox__box"></div>
+										<span class="checkbox__box"></span>
 
 										Со скидкой
 									</label>
@@ -95,7 +95,7 @@
 								<li class="filters__item">
 									<label class="checkbox">
 										<input class="checkbox__input" type="checkbox" id="new" name="new">
-										<div class="checkbox__box"></div>
+										<span class="checkbox__box"></span>
 
 										Новинка
 									</label>
@@ -105,7 +105,7 @@
 								<li class="filters__item">
 									<label class="checkbox">
 										<input class="checkbox__input" type="checkbox" id="hit" name="hit">
-										<div class="checkbox__box"></div>
+										<span class="checkbox__box"></span>
 
 										Хит
 									</label>
@@ -129,7 +129,7 @@
 								<li class="filters__item">
 									<label class="checkbox">
 										<input class="checkbox__input" type="checkbox" id="CocaCola" name="CocaCola" checked>
-										<div class="checkbox__box"></div>
+										<span class="checkbox__box"></span>
 
 										CocaCola
 									</label>
@@ -138,7 +138,7 @@
 								<li class="filters__item">
 									<label class="checkbox">
 										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
-										<div class="checkbox__box"></div>
+										<span class="checkbox__box"></span>
 
 										Pepsi
 									</label>
@@ -146,8 +146,8 @@
 
 								<li class="filters__item">
 									<label class="checkbox">
-										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
-										<div class="checkbox__box"></div>
+										<input class="checkbox__input" type="checkbox" id="Fanta" name="Fanta">
+										<span class="checkbox__box"></span>
 
 										Fanta
 									</label>
@@ -155,8 +155,8 @@
 
 								<li class="filters__item">
 									<label class="checkbox">
-										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
-										<div class="checkbox__box"></div>
+										<input class="checkbox__input" type="checkbox" id="RedBull" name="RedBull">
+										<span class="checkbox__box"></span>
 
 										RedBull
 									</label>
@@ -164,19 +164,10 @@
 
 								<li class="filters__item">
 									<label class="checkbox">
-										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
-										<div class="checkbox__box"></div>
+										<input class="checkbox__input" type="checkbox" id="DrPepper" name="DrPepper">
+										<span class="checkbox__box"></span>
 
 										Dr Pepper
-									</label>
-								</li>
-
-								<li class="filters__item">
-									<label class="checkbox">
-										<input class="checkbox__input" type="checkbox" id="Pepsi" name="Pepsi">
-										<div class="checkbox__box"></div>
-
-										Fanta
 									</label>
 								</li>
 							</ul>
@@ -200,7 +191,7 @@
 
 								</label>
 
-								<label class="filters__label" for="maxPrice">
+								<label class="filters__label">
 									До
 									<input class="filters__price filters__price--max" type="number" name="maxPrice" value="1000">
 									₽
@@ -215,7 +206,7 @@
 				</ul>
 			</aside>
 
-			<section class="catalogue__inner">
+			<div class="catalogue__inner">
 				<form class="catalogue__filter" name="viewfilter">
 					<div class="catalogue__input-container">
 						<select class="catalogue__input">
@@ -500,13 +491,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-5">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-4">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-5" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-4" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -568,13 +559,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-6">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-5">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-6" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-5" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -635,13 +626,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-7">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-6">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-7" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-6" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -701,13 +692,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-8">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-7">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-8" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-7" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -766,13 +757,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-4">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-8">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-4" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-8" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -833,13 +824,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-1">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-9">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-1" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-9" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -899,13 +890,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-5">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-10">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-5" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-10" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -967,13 +958,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-6">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-11">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-6" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-11" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -1034,13 +1025,13 @@
 									</ul>
 		
 									<div class="card__control">
-										<label class="sr-only" for="good-7">Количество товаров для добавления в корзину</label>
+										<label class="sr-only" for="good-12">Количество товаров для добавления в корзину</label>
 		
 										<button class="card__btn card__btn--subtract" data-action="subtract" type="button">
 											<span class="sr-only">Убрать товар</span>
 										</button>
 										
-										<input class="card__input" name="good-count" type="text" id="good-7" value="0">
+										<input class="card__input" name="good-count" type="text" id="good-12" value="0">
 										
 										<button class="card__btn card__btn--add" data-action="add" type="button">
 											<span class="sr-only">Добавить товар</span>
@@ -1099,7 +1090,7 @@
 						</li>
 					</ul>
 				</nav>
-			</section>
+			</div>
 		</div>
 
 	</div>

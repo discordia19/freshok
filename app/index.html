@@ -14,9 +14,9 @@
 	<h1 class="sr-only">Интернет супермаркет полезных продуктов</h1>
 
 	<header class="header">
-	<div class="header__top">
+	<nav class="header__top">
 		<div class="container">
-			<nav class="header__inner">
+			<div class="header__inner">
 
 				<button class="header__burger" data-action="toggleMenu">
 					<span class="sr-only">Открыть меню</span>
@@ -35,7 +35,7 @@
 					</li>
 
 					<li class="header__contact">
-						<a class="header__link header__link--image header__link--phone outline" href="">
+						<a class="header__link header__link--image header__link--phone outline" href="#">
 							<span class="header__link-text">Горячая линия 24/7</span>
 						</a>
 					</li>
@@ -62,14 +62,14 @@
 					</li>
 				</ul>
 
-			</nav>
+			</div>
 		</div>
-	</div>
+	</nav>
 
-	<div class="header__bottom">
+	<nav class="header__bottom">
 		<div class="container">
 			<nav class="header__inner">
-				<a class="logo header__logo" href="catalogue.html"> 
+				<a class="logo header__logo" href="#"> 
 					<svg class="header__logo-svg" width="200" height="60">
 						<use class="header__use" xlink:href="images/stack/sprite.svg#logo" role="img" aria-label="Логотип сайта">
 						</use>
@@ -155,11 +155,11 @@
 					</ul>
 				</div>
 
-				<form class="header__form form">
+				<form class="header__form form" data-action="insideSearch">
 					<label class="sr-only" for="search">Поиск товара в магазине</label>
 					<input class="form__input form__input--search" id="search" type="search" name="search"
-						placeholder="Найти в магазине ..." required>
-					<button class="form__button form__button--mobile" type="submit">
+						placeholder="Найти в магазине ..." required data-action="insideSearch">
+					<button class="form__button form__button--mobile" type="submit" data-action="insideSearch">
 						Поиск
 					</button>
 				</form>
@@ -225,7 +225,7 @@
 				</ul>
 			</nav>
 		</div>
-	</div>
+	</nav>
 </header>
 
 	<aside class="menu menu--disable" data-action="toggleMenu">
@@ -254,7 +254,88 @@
 	</div>
 
 	<div class="menu__bottom">
-		<a class="menu__catalog" href="#">Каталог товаров</a>
+		<button class="menu__catalog-btn" type="button" data-action="toggleCatalog">
+			<svg class="menu__catalog-svg" width="26" height="20" data-action="toggleCatalog">
+				<use xlink:href="images/stack/sprite.svg#menu--nav_icon" data-action="toggleCatalog"></use>
+			</svg>
+
+			<span class="menu__catalog-text" data-action="toggleCatalog">Каталог товаров</span>
+		</button>
+
+		<ul class="menu__catalog menu__catalog--disabled">
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Овощи и фрукты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Бакалея
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Молочные продукты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Хлеб
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Мясо
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Колбаса
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Рыба
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Алкоголь
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Напитки
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Торты
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Мясо
+				</a>
+			</li>
+
+			<li class="menu__catalog-item">
+				<a class="menu__catalog-link" href="#">
+					Чай, кофе
+				</a>
+			</li>
+
+		</ul>
 
 		<address class="menu__address">
 			<a class="menu__contact menu__contact--tel" href="tel:+7907288365">
@@ -282,8 +363,8 @@
 						<span class="sr-only">
 							Youtube
 						</span>
-						<svg width="32" height="28" viewBox="0 0 32 28" fill="white" xmlns="http://www.w3.org/2000/svg">
-							<use xlink:href="images/stack/sprite.svg#footer--favicons--youtube"></use>
+						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<use xlink:href="images/stack/catalogue.svg#youtube"></use>
 						</svg>
 					</a>
 				</li>
@@ -391,7 +472,7 @@
 				<img class="cart__image" src="images/goods/s/pineapple-s.png" alt="Фото продукта">
 
 				<div class="cart__info">
-					<div class="cart__name">Ананас, 1 кг</div>
+					<h4 class="cart__name">Ананас, 1 кг</h4>
 					<div class="cart__price">999₽</div>
 				</div>
 
@@ -439,7 +520,7 @@
 			<div class="container container--promo">
 				<div class="promo__inner">
 					<h3 class="promo__title">
-						СВЕЖАЧОК ВАМ в ХАТУ
+						Свежачок вам в хату
 						<br>
 						<span class="promo__subtitle">
 							Скидка -50%
@@ -449,7 +530,7 @@
 					<p class="promo__terms">
 						Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
 					</p>
-					<a class="promo__button button outline">Купить сейчас</a>
+					<a class="promo__button button outline" href="#">Купить сейчас</a>
 				</div>
 			</div>
 		</li>
@@ -459,7 +540,7 @@
 			<div class="container container--promo">
 				<div class="promo__inner">
 					<h3 class="promo__title">
-						НАКРУТИ СЕБЕ ТОМАТОВ
+						Накрути себе томатов
 						<br>
 						<span class="promo__subtitle">
 							АКЦИЯ: 3 кг по цене 1
@@ -1536,35 +1617,35 @@
 
 				<ul class="footer__list">
 					<li class="footer__item">
-						<a class="footer__link outline" href="">О нас</a>
+						<a class="footer__link outline" href="#">О нас</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Оплата и доставка</a>
+						<a class="footer__link outline" href="#">Оплата и доставка</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Отзывы</a>
+						<a class="footer__link outline" href="#">Отзывы</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Контакты</a>
+						<a class="footer__link outline" href="#">Контакты</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Вакансии</a>
+						<a class="footer__link outline" href="#">Вакансии</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Новости</a>
+						<a class="footer__link outline" href="#">Новости</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Публичная оферта</a>
+						<a class="footer__link outline" href="#">Публичная оферта</a>
 					</li>
 
 					<li class="footer__item">
-						<a class="footer__link outline" href="">Акции</a>
+						<a class="footer__link outline" href="#">Акции</a>
 					</li>
 				</ul>
 

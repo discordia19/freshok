@@ -82,8 +82,19 @@
 		constructor(elem, openBtn) {
 			this._elem = elem;
 			this._open = openBtn;
+
+			this._catalogBtn = this._elem.querySelector('.menu__catalog-btn');
+			this._catalog = this._elem.querySelector('.menu__catalog');
+
+			// this._catalog.onclick = this.onClick.bind(this);
 			elem.onclick = this.onClick.bind(this);
 			openBtn.onclick = this.onClick.bind(this);
+		}
+
+		toggleCatalog() {
+			console.log('inToggleCatalog');
+			this._catalog.classList.toggle('menu__catalog--disabled');
+			this._catalogBtn.classList.toggle('menu__catalog-btn--active');
 		}
 
 		toggleMenu() {
@@ -110,12 +121,22 @@
 
 	const searchformBtn = document.querySelector('.form__button');
 	const showSearchBtn = document.querySelector('.header__user-link--search');
+	const searchForm = document.querySelector('.header__form');
 
 	searchformBtn.addEventListener('click', (event) => (event.preventDefault()));
 	showSearchBtn.addEventListener('click', (event) => {
-		const search = document.querySelector('.header__form');
+		searchForm.classList.toggle('header__form--active');
+		event.stopPropagation();
+	});
 
-		search.classList.toggle('header__form--active');
+	document.addEventListener('click', (event) => {
+		if (searchForm.classList.contains('header__form--active')) {
+
+			if (event.target.dataset.action !== 'insideSearch') {
+				console.log('nodata');
+				searchForm.classList.remove('header__form--active');
+			}
+		}
 	});
 
 	// Catalog
@@ -290,13 +311,13 @@
 				elem.onclick = this.onClick.bind(this);
 				openBtn.onclick = this.onButtonClick.bind(this);
 			}
-	
+
 			toggleFilter() {
 				console.log('inToggle')
 				this._elem.classList.toggle('filters--disable');
 				document.body.classList.toggle('scroll-off');
 			}
-	
+
 			onButtonClick(event) {
 				console.log('hello')
 				let action = event.target.dataset.action;
@@ -480,6 +501,4 @@
 			sortButtons.disableList();
 		}
 	});
-
-
 })();
