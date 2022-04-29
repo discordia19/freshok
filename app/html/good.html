@@ -1,6 +1,6 @@
 @include("components/_head.html", {
-	"title" : "ФреШок | Каталог товаров",
-	"h1" : "Каталог товаров"
+	"title" : "ФреШок | Страница товара",
+	"h1" : "Страница товара"
 })
 
 	@include("components/_header.html")
@@ -13,10 +13,8 @@
 		@include("components/_navigation.html", {
 			"dir" : "Каталог товаров",
 			"dir_link" : "#",
-			"link2" : ""
+			"link2" : "<a class=\"navigation__dir navigation__dir--catalog\" href=\"#\">Питахайя красная с белой мякотью</a>"
 		})
-		@include("components/_catalogue.html")
-		@include("components/_advantages.html")
 	</main>
 	
 	@include("components/_footer.html")
