@@ -1,0 +1,38 @@
+// .product {
+// 	padding: 50px 0 60px;
+
+// 	&__inner {
+// 		display: grid;
+// 		grid-template-columns: 1fr 1fr;
+// 		min-height: 560px;
+// 		gap: 30px;
+
+// 		.carousel {
+// 			display: flex;
+// 			align-items: center;
+// 			border: 1px solid $silver-600;
+// 			border-radius: 3px;
+
+// 			&__slide {
+// 				padding: 0;
+				
+// 				&.is-selected {
+// 					width: 420px;
+// 				}
+
+// 				&:not(.is-selected) {
+// 					img {
+// 						transform: scale(0);
+// 					}
+// 				}
+// 			}
+
+// 			img {
+// 				width: 420px;
+// 				height: 420px;
+// 				object-fit: cover;
+// 				transition: transform 0.3s ease;
+// 			}
+// 		}
+// 	}
+// }

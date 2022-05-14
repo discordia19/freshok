@@ -80,6 +80,16 @@ export const scripts = () => {
 		.pipe(browserSync.stream());
 };
 
+export const scriptsProducts = () => {
+	return gulp.src([
+		'node_modules/@fancyapps/ui/dist/fancybox.esm.js',
+	])
+		.pipe(concat('fancybox.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('app/js'))
+		.pipe(browserSync.stream());
+};
+
 // Sprites
 
 export const svg = () => {
@@ -252,5 +262,5 @@ export const watch = () => {
 
 
 export default gulp.series(
-	gulp.parallel(htmlInclude, styles, scripts, server, watch)
+	gulp.parallel(htmlInclude, styles, scripts, scriptsProducts, server, watch)
 )

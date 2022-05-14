@@ -1,0 +1,388 @@
+.product {
+	padding: 50px 0 60px;
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: 560px;
+		width: 100%;
+		gap: 30px;
+	}
+
+	&__slider {
+		position: relative;
+		min-width: 0;
+		overflow-x: hidden;
+	}
+
+	&__wrapper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		flex-shrink: 0;
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 60px;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		border-radius: 6px;
+		background-color: rgba($white, 0.8);
+		outline: transparent;
+		transition: background-color 0.3s ease, outline-color 0.3s ease;
+
+		// @include mq(desktop-2, max) {
+		// 	top: 15%;
+		// }
+
+		// @include mq(tablet, max) {
+		// 	display: none;
+		// }
+
+		svg {
+			transition: fill 0.3s ease;
+		}
+
+		&--prev {
+			left: 3%;
+
+			@include mq(desktop-2, max) {
+				left: 15px;
+			}
+		}
+
+		&--next {
+			right: 3%;
+
+			@include mq(desktop-2, max) {
+				right: 15px;
+			}
+		}
+	}
+
+	&__svg path {
+		fill: inherit;
+		fill-opacity: inherit;
+	}
+
+	&__description {
+		position: relative;
+	}
+
+	&__title {
+		margin-bottom: 70px;
+		font-family: "Ruda";
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		color: $dark-900;
+	}
+
+	&__badge {
+		position: absolute;
+		top: 50px;
+		padding: 6px 8px;
+		border-radius: 6px;
+		color: $white;
+		font-family: "OpenSans";
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 1;
+		text-transform: uppercase;
+
+		&--hit {
+			background-color: $orange-900;
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+
+	&__key {
+		margin-right: 12px;
+		padding: 5px;
+		border-radius: 6px;
+		font-weight: 400;
+		font-size: 0.875rem;
+		line-height: 1.2;
+		color: $silver-600;
+		background-color: $silver-300;
+	}
+
+	&__rating {
+		margin-right: auto;
+	}
+
+	&__state {
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+
+		&--instock {
+			color: $green-900;
+		}
+	}
+
+	&__prices {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 60px;
+	}
+
+	&__price {
+		font-weight: 700;
+		font-size: 1.875rem;
+		line-height: 1;
+		color: $green-900;
+		letter-spacing: 0.03em;
+
+		&--old {
+			position: relative;
+			margin-right: 18px;
+			font-size: 1.25rem;
+			color: $silver-600;
+
+			&::after {
+				@include pseudo();
+				width: 100%;
+				height: 100%;
+				top: 0;
+				border-top: 1px solid $silver-600;
+				transform: rotate(-15deg) translateY(50%);
+			}
+		}
+	}
+
+	&__payment {
+		display: flex;
+		margin-bottom: 32px;
+		// align-items: stretch;
+
+		@include mq(tablet-2, max) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+		}
+	}
+
+	&__control {
+		display: flex;
+		align-self: center;
+		margin-right: 20px;
+
+		@include mq(tablet-3, max) {
+			margin-right: 10px;
+		}
+
+		@include mq(tablet-2, max) {
+			margin-right: 0;
+			grid-column: 1/3;
+			order: 1;
+			justify-self: center;
+		}
+	}
+
+	&__input {
+		max-width: 70px;
+		height: 45px;
+		background-color: $silver-300;
+		text-align: center;
+		border: none;
+		transition: background-color 0.3s ease;
+	}
+
+	&__btn {
+		@include buttonreset;
+		width: 45px;
+		height: 45px;
+		background-color: $green-900;
+		transition: background-color 0.3s ease, outline-color 0.3s ease, box-shadow 0.3s ease;
+
+		&:focus {
+			outline: 3px solid $green-200;
+		}
+
+		&:hover {
+			background-color: $green-400;
+		}
+
+		&:active {
+			box-shadow: inset 0px 4px 4px rgb(255 255 255 / 25%);
+			outline: transparent;
+		}
+
+		&--subtract {
+			@include backgroundimage("../images/favicons/counter/minus.svg", center, no-repeat);
+		}
+
+		&--add {
+			@include backgroundimage("../images/favicons/counter/plus.svg", center, no-repeat);
+		}
+	}
+
+	&__button {
+		margin-right: auto;
+		padding-left: 50px;
+		background-image: url("../../images/favicons/global/cart-s.svg");
+		background-size: 25px;
+		background-position: 12px center;
+		background-repeat: no-repeat;
+	}
+
+	&__favorites {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+	}
+
+	&__delivery {
+		padding-bottom: 18px;
+		border-bottom: 1px solid $silver-600;
+		margin-bottom: 18px;
+		font-family: "Ruda";
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 1.125;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+	}
+
+	&__information {
+		margin-bottom: 18px;
+		font-size: 0.875rem;
+		line-height: 1.6;
+	}
+
+	&__more {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		font-size: 0.875rem;
+		line-height: 1.2;
+		color: $green-900;
+	}
+}
+
+.fancybox {
+	&__container {
+		padding: 100px;
+
+		--fancybox-bg: gray;
+	}
+
+	&__container .is-selected {
+		border-radius: 15px;
+		background-color: white;
+	}
+
+	&__container .is-selected .carousel__button.is-close {
+		color: rgba($black, 0.15);
+		right: -430px;
+		// right: calc(100%);
+
+		border: 0;
+		width: 40px;
+		height: 40px;
+		background-image: url(../images/favicons/cart/close-m.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: none;
+
+		@include mq(desktop-2, max) {
+			right: -300px;
+		}
+		@include mq(desktop-1, max) {
+			right: -200px;
+		}
+		@include mq(tablet-3, max) {
+			right: -120px;
+		}
+		@include mq(tablet-2, max) {
+			right: -50px;
+		}
+		@include mq(tablet, max) {
+			right: -50px;
+		}
+	}
+
+	// &__container &__content {
+	// 	/* Create white border around the image */
+	// 	box-sizing: content-box;
+
+	// 	background: #fff;
+	// 	// padding: 60px 500px 150px;
+	// 	border-radius: 15px;
+	// }
+}
+
+.carousel {
+	&__viewport {
+		display: none;
+	}
+
+	&__button {
+		color: $dark-500;
+	}
+}
+
+.rating {
+	display: grid;
+	max-width: 105px;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 5px;
+	transform: rotate(180deg);
+	padding: 0;
+	border: none;
+	background-color: transparent;
+
+	&__input {
+		appearance: none;
+
+		&:checked ~ .rating__label .rating__color {
+			fill: #ffb800;
+			fill-opacity: 1;
+		}
+
+		&:focus ~ .rating__label .rating__color {
+			fill: #ffb800;
+			fill-opacity: 1;
+		}
+	}
+
+	&__star {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: rotate(180deg);
+		// width: 20px;
+		// height: 20px;
+	}
+
+	&__color {
+		fill-opacity: 0.3;
+	}
+
+	&__label {
+		display: flex;
+		justify-content: center;
+		padding: 0;
+	}
+}
