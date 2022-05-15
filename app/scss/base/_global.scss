@@ -38,6 +38,10 @@ body {
 	padding: 0 15px;
 	margin: 0 auto;
 
+	&--description {
+		max-width: 710px;
+	}
+
 	&--slider {
 		overflow: hidden;
 	}
